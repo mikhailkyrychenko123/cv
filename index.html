@@ -232,13 +232,30 @@
     <button class="rd-lead-backdrop" type="button" data-rd-lead-close aria-label="Close shop reservation form" tabindex="-1"></button>
     <section class="rd-lead-dialog" id="rd-lead-dialog" role="dialog" aria-modal="true" aria-labelledby="rd-lead-title" aria-describedby="rd-lead-intro" tabindex="-1">
       <header class="rd-lead-header"><div><span class="rd-lead-kicker">RUSTY DROP · FIRST 50 SHOPS</span><h2 id="rd-lead-title">Reserve your free shop</h2></div><button type="button" class="rd-lead-close" data-rd-lead-close aria-label="Close form">×</button></header>
-      <p class="rd-lead-intro" id="rd-lead-intro">Leave your email, and we’ll be in touch about opening your shop in the game world.</p>
+      <p class="rd-lead-intro" id="rd-lead-intro">Deliver a parcel across the isometric map to unlock the shop reservation form.</p>
       <form class="rd-lead-form" data-rd-lead-form novalidate>
-        <label for="rd-lead-email">Email address</label>
-        <input id="rd-lead-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com">
-        <label class="rd-lead-consent"><input name="consent" type="checkbox" required><span>I agree to the use of my email for a Rusty Drop shop request and understand I can withdraw consent at any time. <a href="privacy.html" target="_blank" rel="noopener">Read the Privacy Notice</a>.</span></label>
-        <div class="rd-lead-honeypot" aria-hidden="true"><label for="rd-lead-website">Leave this field empty</label><input id="rd-lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="rd-lead-submit" type="submit"><span>Send request</span><span aria-hidden="true">↗</span></button>
+        <section class="rd-delivery-captcha" data-delivery-captcha aria-labelledby="rd-delivery-title">
+          <div class="rd-delivery-captcha__heading"><span class="rd-delivery-captcha__eyebrow">RUSTY DROP · ROUTE CHECK</span><h3 id="rd-delivery-title">Deliver the parcel</h3></div>
+          <p class="rd-delivery-captcha__prompt">Guide the truck from the depot to the shop. Move one tile at a time and avoid the roadworks.</p>
+          <div class="rd-delivery-map-stage">
+            <div class="rd-delivery-map" data-delivery-map role="group" aria-label="Isometric delivery map"></div>
+          </div>
+          <div class="rd-delivery-controls" role="group" aria-label="Move the delivery truck">
+            <button type="button" data-delivery-move="x-1" aria-label="Move northwest">↖</button>
+            <button type="button" data-delivery-move="y-1" aria-label="Move northeast">↗</button>
+            <button type="button" data-delivery-move="y+1" aria-label="Move southwest">↙</button>
+            <button type="button" data-delivery-move="x+1" aria-label="Move southeast">↘</button>
+          </div>
+          <p class="rd-delivery-status" data-delivery-status aria-live="polite" role="status">Choose a neighboring road tile to start the delivery.</p>
+          <div class="rd-delivery-captcha__footer"><button class="rd-delivery-reset" type="button" data-delivery-reset>New route</button><span class="rd-delivery-local-note" data-delivery-local-note hidden>Local preview · no request will be sent</span></div>
+        </section>
+        <div class="rd-lead-fields" data-rd-lead-fields hidden>
+          <label for="rd-lead-email">Email address</label>
+          <input id="rd-lead-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com">
+          <label class="rd-lead-consent"><input name="consent" type="checkbox" required><span>I agree to the use of my email for a Rusty Drop shop request and understand I can withdraw consent at any time. <a href="privacy.html" target="_blank" rel="noopener">Read the Privacy Notice</a>.</span></label>
+          <div class="rd-lead-honeypot" aria-hidden="true"><label for="rd-lead-website">Leave this field empty</label><input id="rd-lead-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="rd-lead-submit" type="submit"><span>Send request</span><span aria-hidden="true">↗</span></button>
+        </div>
         <p class="rd-lead-status" data-rd-lead-status aria-live="polite" role="status"></p>
       </form>
       <p class="rd-lead-footnote">Your email is used only to follow up on this shop request.</p>
@@ -547,6 +564,7 @@
 <script src="pixel-zombie-defense-popup-60.js" defer></script>
 <script src="hopworld-popup-60.js" defer></script>
   <script src="trade-district-slide-82.js" defer></script>
+  <script src="delivery-route.js" defer></script>
   <script src="rusty-drop-leads.js" defer></script>
   <script src="shop-section-1.js" defer></script>
 </body>

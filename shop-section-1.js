@@ -113,6 +113,37 @@
   var detailOpen = mobileLayout;
   var baseCardWidth = 0;
 
+  function deliveryCaptchaMarkup() {
+    return '<section class="rd-delivery-captcha shop-inquiry-captcha" data-delivery-captcha aria-label="Delivery route check">' +
+      '<div class="rd-delivery-captcha__heading"><span class="rd-delivery-captcha__eyebrow">SHOP · ROUTE CHECK</span><h3>Deliver the parcel</h3></div>' +
+      '<p class="rd-delivery-captcha__prompt">Guide the truck from the depot to the shop. Move one tile at a time and avoid the roadworks.</p>' +
+      '<div class="rd-delivery-map-stage"><div class="rd-delivery-map" data-delivery-map role="group" aria-label="Isometric delivery map"></div></div>' +
+      '<div class="rd-delivery-controls" role="group" aria-label="Move the delivery truck"><button type="button" data-delivery-move="x-1" aria-label="Move northwest">↖</button><button type="button" data-delivery-move="y-1" aria-label="Move northeast">↗</button><button type="button" data-delivery-move="y+1" aria-label="Move southwest">↙</button><button type="button" data-delivery-move="x+1" aria-label="Move southeast">↘</button></div>' +
+      '<p class="rd-delivery-status" data-delivery-status aria-live="polite" role="status">Choose a neighboring road tile to start the delivery.</p>' +
+      '<div class="rd-delivery-captcha__footer"><button class="rd-delivery-reset" type="button" data-delivery-reset>New route</button><span class="rd-delivery-local-note" data-delivery-local-note hidden>Local preview · no request will be sent</span></div>' +
+      '</section>';
+  }
+  var inquiryDeliveryRoutes = new WeakMap();
+
+  function getInquiryRoute(form) {
+    var route = inquiryDeliveryRoutes.get(form);
+    if (route) return route;
+    var captcha = form.querySelector("[data-delivery-captcha]");
+    var fields = form.querySelector("[data-inquiry-fields]");
+    var status = form.querySelector("[data-shop-inquiry-status]");
+    if (!captcha || !fields || !window.RustyDropDeliveryRoute) return null;
+    route = window.RustyDropDeliveryRoute.mount(captcha, {
+      onSolved: function () { fields.hidden = false; },
+      onReset: function () {
+        fields.hidden = true;
+        status.textContent = "";
+        status.classList.remove("is-error", "is-local");
+      }
+    });
+    if (route) inquiryDeliveryRoutes.set(form, route);
+    return route;
+  }
+
   function cardMarkup(product, index, clone) {
     var number = String(index + 1).padStart(2, "0");
     var activeStyle = product.activeStyle || "standard";
@@ -161,10 +192,11 @@
       '<p class="shop-inline-description' + (product.poem ? ' shop-haiku' : '') + '">' + product.detail + (product.detailAttribution ? '<span class="shop-inline-attribution">' + product.detailAttribution + '</span>' : '') + '</p>' + compositionMarkup + factsMarkup +
       '<button class="shop-inline-action" type="button" data-shop-inquiry-open>Request this piece <span aria-hidden="true">→</span></button></div>' +
       '<form class="shop-inquiry-form" data-shop-inquiry-form hidden><p class="shop-inline-kicker">PRODUCT INQUIRY</p><h3 class="shop-inquiry-title">Ask about this piece</h3><p class="shop-inquiry-product">' + product.title + ' (' + product.edition + ') · ' + formatPrice(product.price) + '</p>' +
-      '<label class="shop-inquiry-email-label">Email address<input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></label>' +
+      deliveryCaptchaMarkup() +
+      '<div class="shop-inquiry-fields" data-inquiry-fields hidden><label class="shop-inquiry-email-label">Email address<input name="email" type="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></label>' +
       '<label class="shop-inquiry-consent"><input name="consent" type="checkbox" required><span>I agree to the use of my email to respond to this product inquiry. <a href="privacy.html" target="_blank" rel="noopener noreferrer">Read the Privacy Notice</a>.</span></label>' +
       '<div class="shop-inquiry-honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>' +
-      '<button class="shop-inline-action shop-inquiry-submit" type="submit"><span>Send request</span><span aria-hidden="true">↗</span></button><p class="shop-inquiry-status" data-shop-inquiry-status aria-live="polite" role="status"></p>' +
+      '<button class="shop-inline-action shop-inquiry-submit" type="submit"><span>Send request</span><span aria-hidden="true">↗</span></button></div><p class="shop-inquiry-status" data-shop-inquiry-status aria-live="polite" role="status"></p>' +
       '<button class="shop-inquiry-back" type="button" data-shop-inquiry-back>← Back to product</button></form></div>' +
       '<img class="shop-visitor" src="' + product.person.src + '" alt="" aria-hidden="true" loading="lazy" style="' + visitorStyle(product.person) + '"' + tab + '></article>';
   }
@@ -467,6 +499,11 @@
   function showInquiryForm(panel) {
     var content = panel.querySelector("[data-shop-product-content]");
     var form = panel.querySelector("[data-shop-inquiry-form]");
+    var route = getInquiryRoute(form);
+    route && route.reset();
+    var status = form.querySelector("[data-shop-inquiry-status]");
+    status.textContent = "";
+    status.classList.remove("is-error", "is-local");
     panel.classList.add("is-inquiry");
     content.hidden = true;
     form.hidden = false;
@@ -693,9 +730,20 @@
     var submit = form.querySelector(".shop-inquiry-submit");
     var card = form.closest("[data-shop-card]");
     var product = products[Number(card.getAttribute("data-product-index"))];
+    var route = getInquiryRoute(form);
     status.textContent = "";
-    status.classList.remove("is-error");
+    status.classList.remove("is-error", "is-local");
+    if (!route || !route.isSolved()) {
+      form.querySelector("[data-delivery-status]").textContent = "Complete the delivery route before sending your request.";
+      return;
+    }
     if (!form.reportValidity()) return;
+    var localPreview = location.protocol === "file:" || location.hostname === "localhost" || location.hostname === "127.0.0.1";
+    if (localPreview) {
+      status.classList.add("is-local");
+      status.textContent = "Local preview: route accepted. No email or request was sent.";
+      return;
+    }
     submit.disabled = true;
     submit.querySelector("span").textContent = "Sending…";
     try {
@@ -712,6 +760,7 @@
       var result = await response.json().catch(function () { return {}; });
       if (!response.ok || !result.ok) throw new Error(result.error || "Please try again in a moment.");
       form.reset();
+      route.reset();
       status.textContent = "Thank you! I’ll be in touch about this piece.";
     } catch (error) {
       status.classList.add("is-error");

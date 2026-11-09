@@ -584,6 +584,10 @@
 .shop-inline-action span:last-child { font-size: 16px; }
 .shop-inquiry-form { display: flex; flex-direction: column; gap: 7px; }
 .shop-inquiry-form[hidden], .shop-inline-copy[hidden] { display: none !important; }
+.shop-inquiry-fields { display: flex; flex-direction: column; gap: 7px; }
+.shop-inquiry-fields[hidden] { display: none !important; }
+.shop-inquiry-captcha { width: 100%; margin: 4px 0; padding: 10px; }
+.shop-inquiry-captcha .rd-delivery-map-stage { min-height: 164px; }
 .shop-inquiry-form .shop-inline-kicker { margin: 0 0 3px; }
 .shop-inquiry-title { margin: 0; font-size: clamp(20px,2.2vw,29px); line-height: 1; letter-spacing: -.04em; }
 .shop-inquiry-product { margin: 0 0 4px; color: #555; font-size: 10px; line-height: 1.35; }
@@ -596,6 +600,7 @@
 .shop-inquiry-submit:disabled { opacity: .58; cursor: wait; }
 .shop-inquiry-status { min-height: 15px; margin: 0; color: #245b3b; font-size: 9px; line-height: 1.4; }
 .shop-inquiry-status.is-error { color: #a3342d; }
+.shop-inquiry-status.is-local { padding: 6px; border: 1px solid #e2d19f; background: #fff9e7; color: #715b22; }
 .shop-inquiry-back { align-self: flex-start; padding: 3px 0; border: 0; background: transparent; color: #444; font: 700 9px/1.2 Arial, Helvetica, sans-serif; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .shop-pagination {
   display: grid;
