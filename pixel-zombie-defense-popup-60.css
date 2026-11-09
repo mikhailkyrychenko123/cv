@@ -1,0 +1,10 @@
+.zd60-modal[hidden]{display:none!important}
+.zd60-modal{position:fixed;z-index:12040;inset:0;display:grid;place-items:center;padding:2vh 2vw;background:rgba(17,19,17,.82);backdrop-filter:blur(7px)}
+.zd60-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:default}
+.zd60-dialog{position:relative;z-index:1;display:flex;flex-direction:column;width:min(960px,94vw);height:min(900px,96vh);height:min(900px,96svh);min-width:0;min-height:0;overflow:hidden;border:1px solid #272820;background:#171a18;box-shadow:10px 10px 0 rgba(0,0,0,.42);outline:none}
+.zd60-dialog-head{height:38px;min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 10px 4px 14px;border-bottom:1px solid #33382e;color:#c0caad;font:900 9px/1 Arial,Helvetica,sans-serif;letter-spacing:.17em}
+.zd60-close{width:29px;height:29px;border:1px solid #66705c;background:#232821;color:#edf0df;font:24px/1 Arial,sans-serif;cursor:pointer}
+.zd60-close:hover,.zd60-close:focus-visible{background:#d9e897;color:#192016;outline:2px solid #d9e897;outline-offset:2px}
+.zd60-frame{display:block;flex:1 1 auto;min-height:0;height:0;width:100%;border:0;background:#171a18}
+body.zd60-open{overflow:hidden}
+@media(max-width:760px){.zd60-modal{padding:0}.zd60-dialog{width:100vw;height:100vh;height:100svh;height:100dvh;border:0;box-shadow:none}.zd60-dialog-head{height:34px;min-height:34px;font-size:8px}}

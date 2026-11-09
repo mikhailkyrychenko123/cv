@@ -1,0 +1,324 @@
+/* Variant 43: fit the branded tank challenge inside the viewport. */
+.tg-modal{padding:10px}
+.tg-dialog{display:flex;flex-direction:column;width:min(920px,100%);max-height:calc(100svh - 20px);overflow:hidden}
+.tg-dialog-header,.tg-summary,.tg-hud,.tg-controls,.tg-footer,.tg-touch-controls{flex:none}
+.tg-dialog-header{padding:13px 18px 10px}
+.tg-summary{padding:8px 18px;font-size:9px}
+.tg-hud{padding:8px 18px}
+.tg-stage{display:grid;flex:1 1 auto;place-items:center;min-height:0;max-height:44svh;margin:0 18px;overflow:hidden}
+.tg-canvas{width:100%;height:auto;max-height:100%;aspect-ratio:9/5;filter:grayscale(.72) contrast(1.04)}
+.tg-controls{padding:9px 18px 10px}
+.tg-touch-controls{padding:0 18px 10px}
+.tg-footer{padding:7px 18px;font-size:7px}
+.tg-hud-mark,.tg-hud-mark--enemy{background:#c4c3bd}
+.tg-result{padding:10px;background:rgba(248,247,240,.9)}
+.tg-result-card{width:min(360px,100%);padding:15px 16px 13px}
+.tg-result-card h3{font-size:22px}
+.tg-result-card p{margin:7px 0 10px}
+.tg-coupon{padding:7px 8px}
+.tg-coupon-copy code{font-size:17px}
+.tg-copy-coupon{width:32px;height:32px}
+.tg-result-actions{margin-top:6px}
+.tg-action{min-height:32px}
+.tg-dialog .tg-close{flex:none}
+@media(max-height:700px){
+  .tg-dialog{max-height:calc(100svh - 12px)}
+  .tg-dialog-header{padding-top:9px;padding-bottom:8px}
+  .tg-summary{padding-top:6px;padding-bottom:6px}
+  .tg-hud{padding-top:6px;padding-bottom:6px}
+  .tg-stage{max-height:38svh;margin-inline:12px}
+  .tg-controls{padding-top:6px;padding-bottom:7px}
+  .tg-touch-controls{padding-bottom:7px}
+  .tg-footer{display:none}
+}
+@media(max-width:700px){
+  .tg-modal{padding:6px}
+  .tg-dialog{max-height:calc(100svh - 12px)}
+  .tg-dialog-header{padding:9px 12px 8px}
+  .tg-summary{padding:6px 12px}
+  .tg-hud{padding:6px 12px}
+  .tg-stage{max-height:38svh;margin:0 8px}
+  .tg-controls{padding:7px 12px}
+  .tg-touch-controls{padding:0 12px 7px}
+  .tg-footer{display:none}
+  .tg-copy-status{margin-top:4px}
+}
+@media(max-height:540px){
+  .tg-summary{display:none}
+  .tg-stage{max-height:32svh}
+  .tg-help{font-size:8px}
+  .tg-touch-controls{gap:8px}
+  .tg-dpad{grid-template-columns:repeat(3,30px);grid-template-rows:repeat(2,27px);gap:3px}
+}
+
+/* Variant 43 Battle City-inspired monochrome arena, fitted inside the game dialog. */
+.tg-dialog{max-height:calc(100svh - 16px);overflow:hidden}
+.tg-stage{display:grid;place-items:center;flex:1 1 auto;width:100%;height:min(40svh,400px);max-height:min(40svh,400px);min-height:0;margin:0 auto;overflow:hidden;border:0;background:transparent}
+.tg-canvas{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:auto;filter:none;touch-action:none}
+.tg-summary{font-size:9px}
+.tg-controls{padding-top:6px;padding-bottom:7px}
+.tg-touch-controls{padding-top:0;padding-bottom:7px}
+.tg-footer{padding-top:6px;padding-bottom:6px}
+.tg-hud-chip{font-size:8px}
+@media(max-height:700px){.tg-stage{height:36svh;max-height:36svh}.tg-summary{display:flex}.tg-footer{display:none}}
+@media(max-height:540px){.tg-summary{display:none}.tg-stage{height:32svh;max-height:32svh}}
+@media(max-width:700px){.tg-stage{height:34svh;max-height:34svh}.tg-summary{display:none}.tg-footer{display:none}.tg-touch-controls{padding-top:0;padding-bottom:5px}}
+
+/* Variant 49: one line-art square arena; campaign art is scenery inside the scene. */
+.tg-modal{padding:6px;background:rgba(17,20,18,.58)}
+.tg-dialog{width:min(92vw,92svh,900px);height:min(94svh,940px);max-height:none;overflow:hidden;display:flex;flex-direction:column;background:#fffefa;border-color:#171d19}
+.tg-dialog-header,.tg-summary,.tg-hud,.tg-controls,.tg-touch-controls,.tg-footer{flex:none}
+.tg-dialog-header{padding:10px 15px 8px}
+.tg-summary{padding:6px 15px}
+.tg-hud{padding:6px 15px;gap:7px}
+.tg-stage{position:relative;display:grid;flex:1 1 0;place-items:center;width:auto;height:auto;max-height:none;min-height:0;margin:0 10px;overflow:hidden;border:0;background:#fffefa}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain;background:#fffefa;filter:none;touch-action:none}
+.tg-hud-mark,.tg-hud-mark--enemy{background:#fff;border-color:#111}
+.tg-fire-control{background:#fff;color:#111}
+.tg-fire-control:active,.tg-fire-control.is-held{background:#eee;color:#111}
+.tg-direction:active,.tg-direction.is-held{background:#eee}
+.tg-result-stamp{background:#fff;color:#111}
+.tg-controls{padding:6px 15px 8px}
+.tg-help{max-width:600px}
+.tg-touch-controls{padding:0 15px 8px}
+.tg-footer{padding:5px 15px}
+.tg-result{inset:0;background:rgba(255,254,250,.84)}
+@media(max-width:700px){
+  .tg-modal{padding:4px}
+  .tg-dialog{width:96vw;height:auto;max-height:94svh}
+  .tg-dialog-header{padding:8px 10px 7px}
+  .tg-summary{display:none}
+  .tg-hud{padding:5px 9px;gap:4px}
+  .tg-hud-chip{gap:4px;padding:4px 5px;font-size:7px}
+  .tg-stage{flex:0 1 auto;height:min(calc(96vw - 24px),58svh);margin:0 3px}
+  .tg-controls{padding:5px 9px 6px}
+  .tg-touch-controls{padding:0 9px 6px}
+  .tg-footer{display:none}
+}
+@media(max-height:620px){
+  .tg-dialog{height:auto;max-height:96svh}
+  .tg-summary,.tg-footer{display:none}
+  .tg-dialog-header{padding-block:5px}
+  .tg-hud{padding-block:4px}
+  .tg-stage{height:min(calc(96vw - 24px),calc(96svh - 180px))}
+  .tg-controls{padding-block:4px}
+  .tg-touch-controls{padding-bottom:4px}
+}
+@media(prefers-reduced-motion:reduce){.tg-result{animation:none}}
+
+/* Version 49: square popup containing only the complete square tank map. */
+.tg-modal{padding:8px}
+.tg-dialog{width:min(94vw,92svh,1000px);height:min(94vw,92svh,1000px);max-height:min(94vw,92svh,1000px);aspect-ratio:1/1;overflow:hidden}
+.tg-stage{display:grid;flex:1 1 0;width:auto;height:auto;min-width:0;min-height:0;margin:0 8px;place-items:center;overflow:hidden;background:#fff}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;filter:none}
+.tg-result{inset:0}
+@media(max-width:700px){
+  .tg-modal{padding:4px}
+  .tg-dialog{width:min(96vw,92svh);height:min(96vw,92svh);max-height:min(96vw,92svh)}
+  .tg-dialog-header{padding:6px 8px}
+  .tg-dialog-header h2{font-size:clamp(17px,5vw,22px)}
+  .tg-summary,.tg-footer{display:none}
+  .tg-hud{padding:4px 6px;gap:3px}
+  .tg-hud-chip{gap:3px;padding:3px 4px;font-size:6px}
+  .tg-hud-chip b{font-size:8px}
+  .tg-stage{margin:0 4px}
+  .tg-controls{justify-content:center;padding:0 4px}
+  .tg-controls .tg-help,.tg-controls>.tg-fire-control{display:none}
+  .tg-touch-controls{justify-content:center;gap:8px;padding:2px 6px 5px}
+  .tg-mobile-note{max-width:110px;font-size:7px;line-height:1.2}
+}
+@media(max-height:560px){
+  .tg-dialog-header{padding-block:4px}
+  .tg-dialog-header .tg-kicker{font-size:7px}
+  .tg-dialog-header h2{font-size:17px}
+  .tg-hud{padding-block:3px}
+  .tg-touch-controls{padding-block:0 3px}
+}
+
+/* Variant 49: keep the complete square arena, product board and floor mark in view. */
+.tg-modal{padding:10px}
+.tg-dialog{width:min(88svh,94vw,1020px);height:min(88svh,1020px);max-height:min(88svh,1020px);overflow:hidden}
+.tg-dialog-header,.tg-summary,.tg-hud,.tg-controls,.tg-touch-controls,.tg-footer{flex:none}
+.tg-stage{display:grid;flex:1 1 0;width:auto;height:auto;max-height:none;min-width:0;min-height:0;margin:0 12px;place-items:center;overflow:hidden;background:#fff}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:min(100%,calc(88svh - 220px));height:auto;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;filter:none}
+.tg-result{inset:0}
+@media(max-width:700px){
+  .tg-modal{padding:4px}
+  .tg-dialog{width:min(96vw,92svh);height:auto;max-height:94svh}
+  .tg-dialog-header{padding:8px 10px 7px}
+  .tg-summary,.tg-footer{display:none}
+  .tg-hud{padding:5px 8px;gap:4px}
+  .tg-hud-chip{gap:4px;padding:4px 5px;font-size:7px}
+  .tg-stage{flex:0 1 auto;width:auto;height:min(calc(96vw - 28px),50svh);max-height:none;margin:0 3px}
+  .tg-dialog .tg-stage .tg-canvas{width:min(100%,50svh);height:auto;max-height:100%}
+  .tg-controls{padding:5px 9px 6px}
+  .tg-touch-controls{padding:0 9px 6px}
+}
+@media(max-height:620px){
+  .tg-dialog{height:auto;max-height:96svh}
+  .tg-stage{height:min(calc(96vw - 28px),44svh)}
+  .tg-dialog .tg-stage .tg-canvas{width:min(100%,44svh);max-height:100%}
+  .tg-dialog-header{padding-block:5px}
+  .tg-hud{padding-block:4px}
+  .tg-controls{padding-block:4px}
+  .tg-touch-controls{padding-bottom:4px}
+}
+@media(prefers-reduced-motion:reduce){.tg-result{animation:none}}
+
+/* The complete battlefield and campaign panel now use the available popup area. */
+.tg-modal{padding:0}
+.tg-dialog{width:min(80vw,1600px);height:min(80svh,900px);max-height:none;border:1px solid #151b19;overflow:hidden}
+.tg-dialog-header,.tg-summary,.tg-hud,.tg-controls,.tg-touch-controls,.tg-footer{flex:none}
+.tg-hud{gap:8px}
+.tg-hud-chip{justify-content:center}
+.tg-stage{display:grid;flex:1 1 0;width:auto;height:auto;max-height:none;min-height:0;margin:0 12px;overflow:hidden;background:#090909}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:auto;object-fit:contain;filter:none}
+.tg-result{inset:0}
+.tg-result-card{max-height:calc(100% - 16px)}
+@media(max-width:900px){
+  .tg-dialog{width:94vw;height:90svh}
+  .tg-stage{margin-inline:8px}
+  .tg-hud{gap:5px;padding-inline:9px}
+  .tg-hud-chip{gap:5px;padding-inline:6px;font-size:7px}
+}
+@media(max-width:600px){
+  .tg-dialog{width:96vw;height:92svh}
+  .tg-dialog-header h2{font-size:21px}
+  .tg-hud-chip{font-size:6px;letter-spacing:.02em}
+  .tg-hud-chip b{font-size:9px}
+  .tg-stage{margin-inline:3px}
+}
+@media(max-height:620px){
+  .tg-dialog{height:94svh}
+  .tg-summary,.tg-footer{display:none}
+  .tg-dialog-header{padding-block:6px}
+  .tg-hud{padding-block:4px}
+  .tg-controls{padding-block:4px}
+  .tg-touch-controls{padding-bottom:4px}
+}
+@media(prefers-reduced-motion:reduce){.tg-result{animation:none}}
+
+
+
+/* Version 49: square popup containing only the complete square tank map. */
+.tg-modal{padding:8px}
+.tg-dialog{width:min(94vw,92svh,1000px);height:min(94vw,92svh,1000px);max-height:min(94vw,92svh,1000px);aspect-ratio:1/1;overflow:hidden}
+.tg-stage{display:grid;flex:1 1 0;width:auto;height:auto;min-width:0;min-height:0;margin:0 8px;place-items:center;overflow:hidden;background:#fff}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;filter:none}
+.tg-result{inset:0}
+@media(max-width:700px){
+  .tg-modal{padding:4px}
+  .tg-dialog{width:min(96vw,92svh);height:min(96vw,92svh);max-height:min(96vw,92svh)}
+  .tg-dialog-header{padding:6px 8px}
+  .tg-dialog-header h2{font-size:clamp(17px,5vw,22px)}
+  .tg-summary,.tg-footer{display:none}
+  .tg-hud{padding:4px 6px;gap:3px}
+  .tg-hud-chip{gap:3px;padding:3px 4px;font-size:6px}
+  .tg-hud-chip b{font-size:8px}
+  .tg-stage{margin:0 4px}
+  .tg-controls{justify-content:center;padding:0 4px}
+  .tg-controls .tg-help,.tg-controls>.tg-fire-control{display:none}
+  .tg-touch-controls{justify-content:center;gap:8px;padding:2px 6px 5px}
+  .tg-mobile-note{max-width:110px;font-size:7px;line-height:1.2}
+}
+@media(max-height:560px){
+  .tg-dialog-header{padding-block:4px}
+  .tg-dialog-header .tg-kicker{font-size:7px}
+  .tg-dialog-header h2{font-size:17px}
+  .tg-hud{padding-block:3px}
+  .tg-touch-controls{padding-block:0 3px}
+}
+
+
+/* Version 49: remove the command strip, square up the popup and give the map the space. */
+.tg-modal{padding:4px}
+.tg-dialog{width:min(94vw,94svh,1000px);height:min(94vw,94svh,1000px);max-height:min(94vw,94svh,1000px);aspect-ratio:1/1;overflow:hidden}
+.tg-dialog-header{padding:8px 12px 6px}
+.tg-dialog-header h2{font-size:clamp(19px,3.2vw,28px)}
+.tg-stage{display:grid;flex:1 1 0;width:auto;height:auto;min-width:0;min-height:0;margin:0;place-items:center;overflow:hidden;background:#fff}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;filter:none}
+@media(max-width:700px){
+  .tg-modal{padding:3px}
+  .tg-dialog{width:min(96vw,94svh);height:min(96vw,94svh);max-height:min(96vw,94svh)}
+  .tg-dialog-header{padding:5px 7px}
+  .tg-dialog-header h2{font-size:clamp(16px,5vw,21px)}
+  .tg-summary,.tg-footer{display:none}
+  .tg-hud{padding:3px 5px;gap:3px}
+  .tg-hud-chip{gap:3px;padding:3px 4px;font-size:6px}
+  .tg-hud-chip b{font-size:8px}
+  .tg-stage{margin:0 3px}
+  .tg-touch-controls{justify-content:center;gap:6px;padding:2px 5px 4px}
+  .tg-mobile-note{max-width:100px;font-size:6px;line-height:1.15}
+}
+@media(max-height:560px){
+  .tg-dialog-header{padding-block:3px}
+  .tg-hud{padding-block:2px}
+  .tg-touch-controls{padding-block:0 2px}
+}
+
+/* Version 49 final layout: status directly above the square arena, no help/footer bar. */
+.tg-dialog{display:flex;flex-direction:column;width:min(94vw,94svh,980px);height:min(94vw,94svh,980px);max-height:min(94vw,94svh,980px);overflow:hidden}
+.tg-dialog-header{flex:none;padding:8px 10px 7px}
+.tg-dialog-header h2{font-size:clamp(18px,3vw,26px)}
+.tg-hud{display:flex;flex:none;justify-content:space-between;gap:6px;padding:5px 8px}
+.tg-hud-chip{min-width:0;justify-content:center;gap:5px;padding:4px 7px;font-size:8px;white-space:nowrap}
+.tg-stage{display:grid;position:relative;flex:1 1 0;width:auto;height:auto;min-width:0;min-height:0;margin:0 4px;place-items:center;overflow:hidden;border:0;background:#fff}
+.tg-dialog .tg-stage .tg-canvas{display:block;width:auto;height:100%;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;filter:none;touch-action:none}
+.tg-touch-controls{display:none}
+@media(max-width:700px){
+  .tg-modal{padding:3px}
+  .tg-dialog{width:min(96vw,94svh);height:min(96vw,94svh);max-height:min(96vw,94svh)}
+  .tg-dialog-header{padding:5px 7px}
+  .tg-dialog-header h2{font-size:clamp(15px,4.8vw,21px)}
+  .tg-close{width:27px;height:27px;font-size:20px}
+  .tg-hud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px 4px}
+  .tg-hud-chip{gap:3px;min-height:25px;padding:3px 2px;font-size:clamp(6px,1.65vw,8px);letter-spacing:0}
+  .tg-hud-chip b{font-size:clamp(8px,2vw,10px)}
+  .tg-hud-mark,.tg-hud-mark--enemy{width:7px;height:7px}
+  .tg-stage{margin:0 3px}
+  .tg-touch-controls{display:flex;flex:none;justify-content:center;padding:2px 0 4px}
+  .tg-dpad{grid-template-columns:repeat(3,26px);grid-template-rows:repeat(2,24px);gap:2px}
+  .tg-direction{font-size:13px}
+  .tg-mobile-note{display:none}
+}
+@media(max-height:560px){
+  .tg-dialog-header{padding-block:3px}
+  .tg-hud{padding-block:2px}
+  .tg-hud-chip{min-height:22px;padding-block:2px}
+  .tg-dpad{grid-template-columns:repeat(3,23px);grid-template-rows:repeat(2,20px);gap:1px}
+  .tg-touch-controls{padding-block:1px 2px}
+}
+
+/* Version 49: reduce the tank title and in-game controls by 20 to 33 percent. */
+.tg-dialog-header h2{font-size:clamp(12px,2vw,17.3px)}
+.tg-hud-chip{min-height:25px;gap:4px;padding:3px 5px;font-size:6.4px}
+.tg-hud-chip b{font-size:9.6px}
+.tg-hud-mark,.tg-hud-mark--enemy{width:7px;height:7px}
+.tg-direction{font-size:10.4px}
+.tg-copy-coupon{width:25px;height:25px}
+.tg-copy-coupon svg{width:14px;height:14px}
+.tg-action{min-height:23px;padding-inline:9px;font-size:6.4px}
+@media(max-width:700px){
+  .tg-dialog-header h2{font-size:clamp(10px,3.2vw,14px)}
+  .tg-hud-chip{min-height:20px;gap:2px;padding:2px;font-size:clamp(5px,1.32vw,6.4px)}
+  .tg-hud-chip b{font-size:clamp(6.4px,1.6vw,8px)}
+  .tg-hud-mark,.tg-hud-mark--enemy{width:6px;height:6px}
+  .tg-dpad{grid-template-columns:repeat(3,21px);grid-template-rows:repeat(2,19px);gap:2px}
+  .tg-direction{font-size:10.4px}
+  .tg-copy-coupon{width:25px;height:25px}
+  .tg-action{min-height:23px;padding-inline:9px;font-size:6.4px}
+}
+
+/* Version 49: keep 12 by 12 tiles at the established on-screen size. */
+.tg-dialog{width:min(82vw,80svh,840px);height:min(82vw,80svh,840px);max-height:min(82vw,80svh,840px)}
+@media(max-width:700px){.tg-dialog{width:min(82vw,80svh,840px);height:min(82vw,80svh,840px);max-height:min(82vw,80svh,840px)}}
+
+
+/* Version 50: restore the full 15-cell popup footprint; keep the 12x12 board at 40px tiles. */
+.tg-dialog{width:min(94vw,94svh,980px);height:min(94vw,94svh,980px);max-height:min(94vw,94svh,980px)}.tg-dialog .tg-stage .tg-canvas{width:auto;height:min(100%,520px);max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain}
+@media(max-width:700px){.tg-dialog{width:min(96vw,94svh);height:min(96vw,94svh);max-height:min(96vw,94svh)}.tg-dialog .tg-stage .tg-canvas{height:min(100%,520px);max-width:100%;max-height:100%}}
+
+/* Version 51: ten cells at 36px each, with all board art scaled to match. */
+.tg-dialog .tg-stage .tg-canvas{width:min(100%,400px);height:auto;max-width:100%;max-height:100%;aspect-ratio:1/1;object-fit:contain}
+@media(max-width:700px){.tg-dialog .tg-stage .tg-canvas{width:min(100%,400px);height:auto;max-width:100%;max-height:100%}}
+

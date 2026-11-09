@@ -1,0 +1,10 @@
+.bp60-modal[hidden]{display:none!important}
+.bp60-modal{position:fixed;z-index:12020;inset:0;display:grid;place-items:center;padding:2vh 2vw;background:rgba(32,28,21,.78);backdrop-filter:blur(7px)}
+.bp60-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:default}
+.bp60-dialog{position:relative;z-index:1;display:flex;flex-direction:column;width:min(820px,96vw);height:min(870px,95svh);overflow:hidden;border:1px solid #29271f;background:#f6eddb;box-shadow:10px 10px 0 rgba(12,16,13,.4);outline:none}
+.bp60-dialog-head{height:38px;min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 10px 4px 14px;border-bottom:1px solid #29271f;color:#66593e;font:900 9px/1 Arial,Helvetica,sans-serif;letter-spacing:.17em}
+.bp60-close{width:29px;height:29px;border:1px solid #29271f;background:#fff9e9;color:#29271f;font:24px/1 Arial,sans-serif;cursor:pointer}
+.bp60-close:hover,.bp60-close:focus-visible{background:#29271f;color:white;outline:2px solid #29271f;outline-offset:2px}
+.bp60-frame{flex:1 1 auto;min-height:0;width:100%;border:0;background:#e9dcc0}
+html.bp60-open,body.bp60-open{overflow:hidden!important}
+@media(max-width:640px){.bp60-modal{padding:0}.bp60-dialog{width:100%;height:100svh;border:0}.bp60-dialog-head{height:34px;min-height:34px;font-size:8px}}

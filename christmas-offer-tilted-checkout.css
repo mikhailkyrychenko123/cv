@@ -1,0 +1,38 @@
+/* Small left turns keep the checkout upside down while staying inside the viewport. */
+html,
+body{max-width:100%;overflow-x:clip}
+
+.co22-checkout{--checkout-angle:177deg;--checkout-scale:.95}
+.co22-checkout .co18-sheet{transform:rotate(var(--checkout-angle)) scale(var(--checkout-scale));transform-origin:center}
+.co22-checkout.is-open .co18-sheet{animation:co22-arrive .78s cubic-bezier(.16,.82,.26,1) both}
+@keyframes co22-arrive{
+  0%{opacity:0;transform:translate3d(52px,-28px,0) rotate(219deg) scale(var(--checkout-scale))}
+  62%{opacity:1;transform:translate3d(-5px,4px,0) rotate(172deg) scale(var(--checkout-scale))}
+  100%{opacity:1;transform:translate3d(0,0,0) rotate(var(--checkout-angle)) scale(var(--checkout-scale))}
+}
+
+.co23-checkout{--checkout-angle:177deg;--checkout-scale:.95}
+.co24-checkout{--checkout-angle:173deg;--checkout-scale:.78}
+.co23-checkout .co18-sheet,
+.co24-checkout .co18-sheet{width:min(1220px,96vw);height:min(680px,88vh);height:min(680px,88dvh);overflow:hidden;transform:rotate(var(--checkout-angle)) scale(var(--checkout-scale));transform-origin:center}
+.co23-checkout.is-open .co18-sheet,
+.co24-checkout.is-open .co18-sheet{animation:co23-arrive .82s cubic-bezier(.16,.82,.26,1) both}
+@keyframes co23-arrive{
+  0%{opacity:0;transform:translate3d(52px,-28px,0) rotate(calc(var(--checkout-angle) + 42deg)) scale(var(--checkout-scale))}
+  62%{opacity:1;transform:translate3d(-5px,4px,0) rotate(calc(var(--checkout-angle) - 5deg)) scale(var(--checkout-scale))}
+  100%{opacity:1;transform:translate3d(0,0,0) rotate(var(--checkout-angle)) scale(var(--checkout-scale))}
+}
+@media(max-height:680px) and (min-width:761px){.co23-checkout,.co24-checkout{--checkout-scale:.70}}
+@media(max-width:760px){
+  .co22-checkout{padding:8px;--checkout-scale:.84}
+  .co23-checkout{padding:8px;--checkout-scale:.84}
+  .co24-checkout{padding:8px;--checkout-scale:.65}
+  .co23-checkout .co18-sheet,
+  .co24-checkout .co18-sheet{width:min(560px,94vw);height:min(720px,86vh);height:min(720px,86dvh)}
+}
+@media(max-width:380px){.co23-checkout{--checkout-scale:.76}.co24-checkout{--checkout-scale:.60}}
+@media(prefers-reduced-motion:reduce){
+  .co22-checkout.is-open .co18-sheet{animation:none;transform:rotate(var(--checkout-angle)) scale(var(--checkout-scale))}
+  .co23-checkout.is-open .co18-sheet,
+  .co24-checkout.is-open .co18-sheet{animation:none;transform:rotate(var(--checkout-angle)) scale(var(--checkout-scale))}
+}

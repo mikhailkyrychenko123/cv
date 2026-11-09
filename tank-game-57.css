@@ -1,0 +1,102 @@
+/* Compact, hand-drawn tank mini-game for index_43 only. */
+.tg-modal[hidden]{display:none!important}
+.tg-modal{position:fixed;z-index:10020;inset:0;display:grid;place-items:center;padding:20px;background:rgba(13,18,18,.62);backdrop-filter:blur(4px)}
+.tg-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:default}
+.tg-dialog{position:relative;z-index:1;width:min(930px,100%);max-height:min(94vh,940px);overflow:auto;border:1px solid #151b19;background:#fffefa;color:#151b19;box-shadow:0 26px 90px rgba(0,0,0,.3);font:14px/1.45 Arial,Helvetica,sans-serif;outline:none}
+.tg-dialog *{box-sizing:border-box}
+.tg-dialog-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:19px 22px 14px;border-bottom:1px solid #151b19}
+.tg-kicker{display:block;margin-bottom:5px;color:#58605b;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.tg-dialog-header h2{margin:0;font-size:clamp(23px,4vw,32px);line-height:1;letter-spacing:-.045em}
+.tg-close{display:grid;place-items:center;flex:none;width:35px;height:35px;border:1px solid #151b19;background:transparent;color:#151b19;font:25px/1 Arial,sans-serif;cursor:pointer}
+.tg-close:hover,.tg-close:focus-visible{background:#151b19;color:#fff;outline:2px solid #151b19;outline-offset:2px}
+.tg-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 22px;border-bottom:1px solid #d5d5ce;color:#525953;font-size:10px}
+.tg-summary strong{color:#151b19;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.tg-hud{display:flex;justify-content:space-between;gap:10px;padding:10px 22px 11px}
+.tg-hud-chip{display:flex;align-items:center;gap:8px;min-height:31px;padding:5px 9px;border:1px solid #222924;background:#fff;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.tg-hud-chip b{font-size:12px;font-variant-numeric:tabular-nums}
+.tg-hud-mark{display:inline-block;width:9px;height:9px;border:1px solid #202720;border-radius:50%;background:#aab28d}
+.tg-hud-mark--enemy{background:#c9876c}
+.tg-stage{position:relative;margin:0 22px;border:1px solid #151b19;background:#f2f0e6}
+.tg-canvas{display:block;width:100%;height:auto;aspect-ratio:9/5;touch-action:none;cursor:crosshair}
+.tg-result{position:absolute;inset:0;display:grid;place-items:center;padding:18px;background:rgba(248,247,240,.88);animation:tg-result-in .36s cubic-bezier(.18,.8,.25,1) both}
+.tg-result[hidden]{display:none!important}
+.tg-result-card{width:min(390px,100%);padding:20px 21px 18px;border:1px solid #171d19;background:#fffefa;box-shadow:7px 7px 0 #171d19;text-align:center}
+.tg-result-stamp{display:inline-block;margin-bottom:8px;padding:5px 8px;border:1px solid #171d19;color:#384334;font-size:8px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.tg-result-card h3{margin:0;font-size:25px;line-height:1;letter-spacing:-.05em}
+.tg-result-card p{margin:9px 0 13px;color:#59605b;font-size:11px}
+.tg-coupon{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:9px 10px;border:1px dashed #171d19;background:#fff}
+.tg-coupon-copy{text-align:left}
+.tg-coupon-copy span{display:block;color:#5d655e;font-size:8px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.tg-coupon-copy code{display:block;margin-top:3px;font:800 19px/1.1 'Courier New',monospace;letter-spacing:.08em;color:#171d19}
+.tg-copy-coupon{display:grid;place-items:center;width:36px;height:36px;border:1px solid #171d19;background:#fff;color:#171d19;cursor:pointer}
+.tg-copy-coupon:hover,.tg-copy-coupon:focus-visible{background:#171d19;color:#fff;outline:2px solid #171d19;outline-offset:2px}
+.tg-copy-coupon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tg-copy-status{display:block;min-height:14px;margin-top:6px;color:#515a52;font-size:9px}
+.tg-result-actions{display:flex;justify-content:center;gap:8px;margin-top:8px}
+.tg-action{min-height:36px;padding:0 13px;border:1px solid #171d19;background:#171d19;color:#fff;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.tg-action--quiet{background:#fff;color:#171d19}
+.tg-action:hover,.tg-action:focus-visible{background:#59644b;color:#fff;outline:2px solid #171d19;outline-offset:2px}
+.tg-controls{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:12px 22px 16px}
+.tg-help{max-width:530px;margin:0;color:#59605b;font-size:10px;line-height:1.5}
+.tg-help b{color:#171d19}
+.tg-controls>.tg-fire-control{display:inline-flex}
+.tg-fire-control{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 13px;border:1px solid #171d19;background:#aab28d;color:#171d19;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;touch-action:none;user-select:none;cursor:pointer}
+.tg-fire-control:active,.tg-fire-control.is-held{background:#d79476;transform:translateY(1px)}
+.tg-fire-control svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tg-touch-controls{display:none;justify-content:space-between;align-items:center;gap:18px;padding:0 22px 17px}
+.tg-touch-controls .tg-fire-control{display:inline-flex}
+.tg-dpad{display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(2,34px);gap:4px}
+.tg-direction{display:grid;place-items:center;border:1px solid #171d19;background:#fff;color:#171d19;font-size:16px;line-height:1;touch-action:none;user-select:none;cursor:pointer}
+.tg-direction:active,.tg-direction.is-held{background:#cbd0b8}
+.tg-direction[data-tank-dir="up"]{grid-column:2;grid-row:1}
+.tg-direction[data-tank-dir="left"]{grid-column:1;grid-row:2}
+.tg-direction[data-tank-dir="down"]{grid-column:2;grid-row:2}
+.tg-direction[data-tank-dir="right"]{grid-column:3;grid-row:2}
+.tg-mobile-note{max-width:240px;color:#5b625d;font-size:9px}
+.tg-footer{display:flex;justify-content:space-between;gap:12px;padding:9px 22px;border-top:1px solid #d5d5ce;color:#6a706a;font-size:8px;letter-spacing:.1em;text-transform:uppercase}
+body.tg-game-open{overflow:hidden}
+@keyframes tg-result-in{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.co-offer .co-add-button--game{right:16px;min-width:225px;gap:10px;padding:11px 13px;border-color:#161b17;border-radius:2px;background:#171d19;color:#fff;box-shadow:0 4px 0 #0b0d0c,0 7px 14px rgba(0,0,0,.16);text-align:left}
+.co-offer .co-add-button--game:hover{background:#343d30;filter:none;box-shadow:0 6px 0 #0b0d0c,0 10px 16px rgba(0,0,0,.18)}
+.co-offer .co-add-button--game:active{background:#171d19}
+.co-offer .co-add-button--game .co-game-icon{display:grid;place-items:center;flex:none;width:28px;height:28px;border:0;color:#d2d7c5}
+.co-offer .co-add-button--game .co-game-icon svg{display:block;width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.co-offer .co-add-button--game .co-button-label{display:block;max-width:155px;font-size:8px;line-height:1.35;letter-spacing:.08em}
+.co-offer .co-add-button--game .co-button-spark{display:none}
+@media(max-width:700px){.tg-modal{padding:9px}.tg-dialog{max-height:96vh}.tg-dialog-header{padding:15px 14px 11px}.tg-summary{padding:9px 14px}.tg-hud{padding:9px 14px}.tg-stage{margin:0 10px}.tg-controls{align-items:flex-start;padding:10px 14px 12px}.tg-help{font-size:9px}.tg-controls>.tg-fire-control{display:none}.tg-touch-controls{display:flex;padding:0 14px 13px}.tg-footer{padding:8px 14px}.tg-result-card{padding:15px 14px}.tg-result-card h3{font-size:21px}.tg-coupon-copy code{font-size:17px}}
+@media(max-width:420px){.tg-dialog-header h2{font-size:24px}.tg-hud{gap:6px}.tg-hud-chip{gap:5px;padding:4px 6px;font-size:8px}.tg-hud-chip b{font-size:10px}.tg-summary{align-items:flex-start;flex-direction:column;gap:3px}.tg-stage{margin:0 8px}.tg-controls{padding-left:10px;padding-right:10px}.tg-touch-controls{padding-left:10px;padding-right:10px}.tg-mobile-note{font-size:8px}}
+
+/* Variant 43: compact, viewport-fitted game frame; retain the complete maze and HUD. */
+.tg-dialog{display:flex;flex-direction:column;max-height:calc(100svh - 16px);overflow:hidden}
+.tg-dialog-header{flex:none;padding-top:9px;padding-bottom:8px}
+.tg-summary{flex:none;padding-top:6px;padding-bottom:6px}
+.tg-hud{flex:none;padding-top:5px;padding-bottom:5px}
+.tg-stage{display:grid;flex:1 1 auto;place-items:center;min-height:0;height:min(47svh,500px);margin:0 12px;overflow:hidden}
+.tg-canvas{width:min(100%,calc(47svh * 1.538));height:auto;max-height:47svh;aspect-ratio:20/13;object-fit:contain}
+.tg-controls{flex:none;padding-top:7px;padding-bottom:8px}
+.tg-touch-controls{flex:none;padding-top:0;padding-bottom:8px}
+.tg-footer{flex:none;padding-top:5px;padding-bottom:5px}
+@media(max-height:700px){.tg-summary,.tg-footer{display:none}.tg-stage{height:44svh}.tg-canvas{width:min(100%,calc(44svh * 1.538));max-height:44svh}.tg-controls{padding-block:5px}}
+@media(max-width:700px){.tg-stage{height:38svh;margin-inline:8px}.tg-canvas{width:min(100%,calc(38svh * 1.538));max-height:38svh}.tg-controls{padding-top:5px;padding-bottom:6px}}
+@media(max-height:540px){.tg-stage{height:34svh}.tg-canvas{width:min(100%,calc(34svh * 1.538));max-height:34svh}.tg-hud-chip{min-height:24px}}
+@media(max-width:480px){.co-offer .co-add-button--game{right:9px;bottom:10px;min-width:198px;padding:9px 10px}.co-offer .co-add-button--game .co-button-label{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.tg-result{animation:none}}
+
+/* Keep the coupon outcome fully inside the playfield on short screens. */
+.tg-result{padding:6px;overflow:hidden}
+.tg-result-card{width:min(350px,calc(100% - 12px));max-height:calc(100% - 8px);overflow:hidden;padding:10px 12px 9px;box-shadow:4px 4px 0 #171d19}
+.tg-result-stamp{margin-bottom:5px;padding:4px 6px;font-size:7px}
+.tg-result-card h3{font-size:20px;line-height:1.05}
+.tg-result-card p{margin:5px 0 7px;font-size:9px;line-height:1.35}
+.tg-coupon{gap:7px;padding:6px 7px}
+.tg-coupon-copy span{font-size:7px}
+.tg-coupon-copy code{font-size:16px}
+.tg-copy-coupon{width:31px;height:31px}
+.tg-copy-status{min-height:11px;margin-top:3px;font-size:8px}
+.tg-result-actions{margin-top:5px}
+.tg-action{min-height:29px;padding-inline:11px;font-size:8px}
+@media(max-width:600px){.tg-result-card{width:min(330px,calc(100% - 8px));padding:9px 10px 8px}.tg-result-card h3{font-size:18px}.tg-result-card p{margin:4px 0 6px}.tg-coupon-copy code{font-size:15px}}
+
+
+
+

@@ -1,0 +1,78 @@
+/* Final cart framing adjustments for the two new copies of cursor-cart variant 01. */
+.co-offer[data-cart-copy="14"].co-cart-open .co-cart-panel {
+  animation: co-cart-copy-flip 1.35s cubic-bezier(.17,.78,.3,1) both;
+}
+
+@keyframes co-cart-copy-flip {
+  0% { opacity: 0; transform: translate3d(112vw,-66vh,0) rotate(195deg) scale(.56); }
+  38% { opacity: 1; transform: translate3d(2vw,5vh,0) rotate(162deg) scale(.9); }
+  65% { transform: translate3d(-12px,14px,0) rotate(198deg) scale(1.04); }
+  82% { transform: translate3d(4px,-4px,0) rotate(177deg) scale(.99); }
+  100% { opacity: 1; transform: translate3d(0,0,0) rotate(180deg) scale(1); }
+}
+
+@media (max-width: 480px) {
+  .co-offer[data-cart-copy="14"].co-cart-open .co-cart-panel {
+    animation-name: co-cart-copy-flip-mobile;
+  }
+  @keyframes co-cart-copy-flip-mobile {
+    0% { opacity: 0; transform: translate3d(112vw,-68vh,0) rotate(180deg) scale(.55); }
+    65% { opacity: 1; transform: translate3d(0,0,0) rotate(180deg) scale(1.02); }
+    100% { opacity: 1; transform: translate3d(0,0,0) rotate(180deg) scale(1); }
+  }
+}
+
+/* Move the full fixed cart panel upward by 15% of the viewport height. */
+.co-offer[data-cart-copy="15"] .co-cart-panel {
+  top: calc(8vh - 15vh);
+}
+@media (max-width: 480px) {
+  .co-offer[data-cart-copy="15"] .co-cart-panel {
+    top: calc(6vh - 15vh);
+  }
+}
+/* Variants 16–17 combine the elevated framing with the upside-down cart. */
+.co-offer[data-cart-copy="16"].co-cart-open .co-cart-panel {
+  animation: co-cart-16-tumble 1.35s cubic-bezier(.17,.78,.3,1) both;
+}
+.co-offer[data-cart-copy="17"].co-cart-open .co-cart-panel {
+  animation: co-cart-17-tumble 1.35s cubic-bezier(.17,.78,.3,1) both;
+}
+@keyframes co-cart-16-tumble {
+  0% { opacity: 0; transform: translate3d(112vw,-66vh,0) rotate(375deg) scale(.56); }
+  38% { opacity: 1; transform: translate3d(2vw,5vh,0) rotate(342deg) scale(.9); }
+  65% { transform: translate3d(-12px,14px,0) rotate(162deg) scale(1.04); }
+  82% { transform: translate3d(4px,-4px,0) rotate(177deg) scale(.99); }
+  100% { opacity: 1; transform: translate3d(0,0,0) rotate(173deg) scale(1); }
+}
+@keyframes co-cart-17-tumble {
+  0% { opacity: 0; transform: translate3d(112vw,-66vh,0) rotate(188deg) scale(.56); }
+  38% { opacity: 1; transform: translate3d(2vw,5vh,0) rotate(155deg) scale(.9); }
+  65% { transform: translate3d(-12px,14px,0) rotate(-25deg) scale(1.04); }
+  82% { transform: translate3d(4px,-4px,0) rotate(-10deg) scale(.99); }
+  100% { opacity: 1; transform: translate3d(0,0,0) rotate(173deg) scale(1); }
+}
+@media (max-width: 480px) {
+  .co-offer[data-cart-copy="16"].co-cart-open .co-cart-panel { animation-name: co-cart-16-mobile; }
+  .co-offer[data-cart-copy="17"].co-cart-open .co-cart-panel { animation-name: co-cart-17-mobile; }
+  @keyframes co-cart-16-mobile {
+    0% { opacity: 0; transform: translate3d(112vw,-68vh,0) rotate(180deg) scale(.55); }
+    65% { opacity: 1; transform: translate3d(0,0,0) rotate(173deg) scale(1.02); }
+    100% { opacity: 1; transform: translate3d(0,0,0) rotate(173deg) scale(1); }
+  }
+  @keyframes co-cart-17-mobile {
+    0% { opacity: 0; transform: translate3d(112vw,-68vh,0) rotate(188deg) scale(.55); }
+    65% { opacity: 1; transform: translate3d(0,0,0) rotate(173deg) scale(1.02); }
+    100% { opacity: 1; transform: translate3d(0,0,0) rotate(173deg) scale(1); }
+  }
+}
+.co-offer[data-cart-copy="16"] .co-cart-panel,
+.co-offer[data-cart-copy="17"] .co-cart-panel {
+  top: calc(8vh - 15vh);
+}
+@media (max-width: 480px) {
+  .co-offer[data-cart-copy="16"] .co-cart-panel,
+  .co-offer[data-cart-copy="17"] .co-cart-panel {
+    top: calc(6vh - 15vh);
+  }
+}

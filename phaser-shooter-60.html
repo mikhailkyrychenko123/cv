@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d20">
+  <title>Void Striker · Five-sector space shooter</title>
+  <link rel="stylesheet" href="phaser-shooter-60.css?v=7">
+</head>
+<body>
+  <main class="vs-app">
+    <header class="vs-topbar">
+      <div class="vs-title"><span>VOID STRIKER · MICRO CAMPAIGN</span><h1>Hold the line. Clear the sector.</h1></div>
+      <div class="vs-actions"><button type="button" id="vs-pause" aria-pressed="false"><i>Ⅱ</i> PAUSE</button><button type="button" id="vs-replay"><i>↻</i> RESTART</button></div>
+    </header>
+    <section class="vs-hud" aria-label="Game status">
+      <span>SECTOR <b id="vs-level">01 / 05</b></span>
+      <span>THREATS <b id="vs-kills">0</b></span>
+      <span>HULL <b id="vs-hull">♥ ♥ ♥ ♥</b></span>
+      <span>WEAPON <b id="vs-weapon">PULSE</b></span>
+      <span>SCORE <b id="vs-score">000000</b></span>
+    </section>
+    <section class="vs-stage" aria-label="Void Striker game">
+      <div id="vs-game" class="vs-canvas-mount"></div>
+      <div class="vs-announcement" id="vs-announcement" hidden><span>SECTOR 01</span><strong>Outer watch</strong><small>Incoming signatures detected</small></div>
+      <div class="vs-start" id="vs-start">
+        <div class="vs-card">
+          <span class="vs-card-kicker">VOID STRIKER · 5 SECTORS</span>
+          <h2>Space is yours<br>to defend.</h2>
+          <p>Clear four short sectors, then take down the command ship. Pick up cyan shields and gold overdrive drops on the way.</p>
+          <button type="button" id="vs-start-button">LAUNCH MISSION <span>↗</span></button>
+          <small>WASD / ARROWS MOVE · MOUSE AIM · CLICK OR SPACE FIRE · E CYCLE WEAPONS</small>
+        </div>
+      </div>
+      <div class="vs-pause" id="vs-pause-screen" hidden><div><small>FLIGHT PAUSED</small><strong>Take a breath.</strong><button type="button" id="vs-resume">RESUME MISSION</button></div></div>
+      <div class="vs-result" id="vs-result" hidden>
+        <article class="vs-card vs-result-card">
+          <span class="vs-card-kicker" id="vs-result-kicker">SECTOR CLEARED</span>
+          <h2 id="vs-result-title">The void is quiet.</h2>
+          <p id="vs-result-copy">Your ship and crew made it home.</p>
+          <div class="vs-final-score"><span>MISSION SCORE</span><b id="vs-final-score">000000</b></div>
+          <div class="vs-coupon" id="vs-coupon" hidden><div><small>SHARED GAME COUPON</small><code id="vs-coupon-code">LEMMING10</code></div><button id="vs-copy" type="button" aria-label="Copy coupon code" title="Copy coupon code">▢</button></div>
+          <small class="vs-copy-status" id="vs-copy-status" aria-live="polite"></small>
+          <button type="button" id="vs-result-replay">FLY AGAIN <span>↻</span></button>
+        </article>
+      </div>
+      <div class="vs-error" id="vs-error" hidden>Canvas is unavailable in this browser. Please reopen the game in a recent browser.</div>
+    </section>
+    <footer class="vs-controls">
+      <p><b>Move:</b> WASD / arrows. <b>Aim:</b> mouse. <b>Fire:</b> click / Space. <b>Weapon:</b> E or 1–3. Cyan = shield · gold = overdrive. Clear five sectors to unlock the coupon.</p>
+      <div class="vs-touch" aria-label="Touch game controls">
+        <button type="button" data-vs-hold="left" aria-label="Move left">←</button>
+        <button type="button" data-vs-hold="right" aria-label="Move right">→</button>
+        <button type="button" class="vs-fire" data-vs-hold="fire">FIRE</button>
+      </div>
+    </footer>
+  </main>
+  <script src="phaser-shooter-60.js?v=7" defer></script>
+</body>
+</html>

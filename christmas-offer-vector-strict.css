@@ -1,0 +1,15 @@
+/* Quiet, site-matched treatment for the hand-drawn SVG offer pages. */
+.co-vector-strict{--co-red:#ee5a63;border:1px solid #d8dfe2;border-radius:3px;background:#fff;box-shadow:0 8px 24px rgba(23,43,55,.045)}
+.co-vector-strict .co-slider{border:1px solid #d4dcdf;border-radius:3px;background:#fff;box-shadow:none}
+.co-vector-strict .co-slide img{object-fit:contain;object-position:center}
+.co-vector-strict .co-photo-vignette{display:none}
+.co-vector-strict .co-image-label{top:12px;left:12px;padding:7px 9px;border:1px solid #dce2e4;border-radius:2px;background:rgba(255,255,255,.96);color:#173f5c;box-shadow:none}
+.co-vector-strict .co-image-label b{color:#ee5a63}
+.co-vector-strict .co-slider-arrow{border-color:#d8dfe2;border-radius:3px;box-shadow:0 2px 6px rgba(20,38,49,.08)}
+.co-vector-strict .co-slider-controls button{border-color:#d7dfe2;border-radius:2px;background:#fff;color:#173f5c}
+.co-vector-strict .co-slider-controls button[aria-current=true]{background:#173f37;border-color:#173f37;color:#fff}
+.co-vector-strict .co-slider-controls-note{color:#53636a;text-shadow:none}
+.co-vector-strict .co-add-button{border-radius:2px;background:var(--co-red);box-shadow:0 3px 0 #bd3b48,0 6px 12px rgba(97,24,34,.12)}
+.co-vector-strict .co-add-button:hover{background:var(--co-red);filter:brightness(1.04)}
+.co-vector-strict .co-animation-note{border-left-color:#173f5c;background:#f7f9f9;color:#59676d}
+.co-vector-strict .co-showcase-caption{border-bottom:1px solid #e3e7e8}

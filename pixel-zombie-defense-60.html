@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171a18">
+  <title>Dead End Defense · Pixel zombie tower defense</title>
+  <link rel="stylesheet" href="pixel-zombie-defense-60.css?v=multi-routes-20261105">
+</head>
+<body>
+  <main class="zd-app">
+    <header class="zd-topbar">
+      <div class="zd-lockup"><span class="zd-mark" aria-hidden="true">✚</span><div><span class="zd-kicker">NORTHSTAR SURVIVAL CLUB · MINI GAME</span><h1>Dead End <em>Defense</em></h1></div></div>
+      <div class="zd-top-actions"><button type="button" data-zd-pause aria-pressed="false"><span aria-hidden="true">Ⅱ</span> PAUSE</button><button type="button" data-zd-restart><span aria-hidden="true">↻</span> RESTART</button></div>
+    </header>
+
+    <section class="zd-hud" aria-label="Game status">
+      <div><span>PASS</span><b data-zd-wave>01 / 03</b></div>
+      <div><span>BASE</span><b data-zd-lives>♥ ♥ ♥ ♥ ♥ ♥</b></div>
+      <div><span>BOLTS</span><b data-zd-cash>360</b></div>
+      <div class="zd-hud-progress"><span>THREATS</span><b data-zd-enemies>0 / 7</b><i><s data-zd-progress></s></i></div>
+      <div class="zd-brand-chip"><span class="zd-signal" aria-hidden="true"></span> <span data-zd-zone>AFTERDARK · ZONE 07</span></div>
+    </section>
+
+    <section class="zd-board" aria-label="Zombie defense battlefield">
+      <canvas class="zd-canvas" data-zd-canvas width="960" height="540" role="img" aria-label="Pixel-art battlefield with three branching routes that merge at one safe house, weapon emplacements, and incoming zombies.">Pixel zombie defense battlefield. Cover three routes, then stop three waves.</canvas>
+      <div class="zd-overlay zd-pause" data-zd-pause-layer hidden><article class="zd-card"><span class="zd-card-kicker">RADIO SILENCE</span><h2>Defense paused.</h2><button type="button" class="zd-primary" data-zd-resume>BACK TO THE ROAD</button></article></div>
+      <div class="zd-overlay zd-result" data-zd-result hidden>
+        <article class="zd-card zd-result-card"><span class="zd-card-kicker" data-zd-result-kicker>OUTPOST LOST</span><h2 data-zd-result-title>The road is quiet.</h2><p data-zd-result-copy>The crew is regrouping for another pass.</p>
+          <div class="zd-coupon" data-zd-coupon hidden><div><small>SHARED GAME COUPON · 10% OFF</small><code>LEMMING10</code></div><button type="button" data-zd-copy aria-label="Copy coupon code LEMMING10">▢</button></div>
+          <small class="zd-copy-status" data-zd-copy-status aria-live="polite"></small><button type="button" class="zd-primary" data-zd-again>PLAY AGAIN <span aria-hidden="true">↻</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="zd-command" aria-label="Choose and build weapons">
+      <div class="zd-armory-head"><div><span class="zd-section-label">PIXEL ARMORY</span><strong>Choose your defense</strong></div><span data-zd-status aria-live="polite">Pick a weapon, then place it on a green socket.</span></div>
+      <div class="zd-weapons" role="group" aria-label="Weapon types">
+        <button type="button" class="zd-weapon is-selected" data-zd-weapon="rifle" aria-pressed="true"><span class="zd-gun-icon zd-gun-icon--rifle" aria-hidden="true"><i></i></span><span><b>RIFLE NEST</b><small>Fast · single target</small></span><strong>90 <small>bolts</small></strong></button>
+        <button type="button" class="zd-weapon" data-zd-weapon="shotgun" aria-pressed="false"><span class="zd-gun-icon zd-gun-icon--shotgun" aria-hidden="true"><i></i></span><span><b>SHOTGUN POST</b><small>Close · pellet spread</small></span><strong>120 <small>bolts</small></strong></button>
+        <button type="button" class="zd-weapon" data-zd-weapon="launcher" aria-pressed="false"><span class="zd-gun-icon zd-gun-icon--launcher" aria-hidden="true"><i></i></span><span><b>GRENADE RIG</b><small>Heavy · splash damage</small></span><strong>150 <small>bolts</small></strong></button>
+      </div>
+      <div class="zd-command-foot"><span data-zd-selection>No emplacement selected</span><button type="button" data-zd-upgrade disabled>UPGRADE POST · 70 BOLTS</button><button type="button" class="zd-send" data-zd-next>START PASS 01 <span aria-hidden="true">→</span></button></div>
+    </section>
+    <footer class="zd-footer"><span>PIXEL DEFENSE · THREE PASSES TO WIN</span><span>⌖ CLICK GREEN SOCKETS TO BUILD · EARN BOLTS FOR EACH ZOMBIE</span></footer>
+  </main>
+  <script src="pixel-zombie-defense-60.js?v=multi-routes-20261105"></script>
+</body>
+</html>

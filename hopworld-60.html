@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#68606d">
+  <title>Hop Route · Three Prize Climbs</title>
+  <link rel="stylesheet" href="hopworld-60.css">
+</head>
+<body>
+  <main class="hop-app">
+    <header class="hop-topbar">
+      <div><span class="hop-kicker">A SMALL PIXEL PLATFORMER</span><h1>Hop Route <span>· Three Prize Climbs</span></h1></div>
+      <button type="button" class="hop-reset" data-reset aria-label="Restart from map one">↻ <span>RESET</span></button>
+    </header>
+    <section class="hop-hud" aria-label="Route status">
+      <span>MAP <b data-map>01 / 03</b></span>
+      <span><span data-goal-label>UNITS</span> <b data-units>0 / 2</b></span>
+      <span data-next-wrap hidden>NEXT <b data-next-letter>—</b></span>
+      <span>LIVES <b data-lives>3</b></span>
+      <span>ROUTE <b data-route>LOCKED</b></span>
+      <span class="hop-world" data-world>CONCRETE HALL</span>
+    </section>
+    <section class="hop-stage" aria-label="Hop Route platform game">
+      <canvas data-canvas width="960" height="540" tabindex="0" role="img" aria-label="Three vertical pixel art platform levels. On each level collect P, R, I, Z, E in order, bounce on trampolines, avoid mechanical hazards and reach the exit."></canvas>
+      <div class="hop-toast" data-toast aria-live="polite" hidden></div>
+      <div class="hop-result" data-result hidden>
+        <article class="hop-result-card"><span class="hop-result-stamp" data-result-stamp>ROUTE COMPLETE</span><h2 data-result-title>All three climbs cleared.</h2><p data-result-copy>The machines are humming again. Nice hopping.</p><button type="button" data-reset-result>Play again</button></article>
+      </div>
+    </section>
+    <footer class="hop-controls">
+      <p data-help><b>Move:</b> A / D or ← / → <b>Jump:</b> W / ↑ / Space <b>Activate a machine:</b> E. Turn on both units, then find the portal.</p>
+      <div class="hop-touch" aria-label="Touch controls"><button type="button" data-left aria-label="Move left">←</button><button type="button" data-right aria-label="Move right">→</button><button type="button" data-jump>JUMP</button><button type="button" data-activate>ACT</button></div>
+    </footer>
+  </main>
+  <script src="hopworld-60.js" defer></script>
+</body>
+</html>

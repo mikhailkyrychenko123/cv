@@ -1,0 +1,57 @@
+/* Compact, single-screen checkout for variants 20–22. */
+.co20-checkout .co18-sheet{width:min(1220px,96vw);height:min(680px,88vh);height:min(680px,88dvh);overflow:hidden}
+.co20-checkout .co18-header{padding:15px 28px 12px}
+.co20-checkout .co18-grid{grid-template-columns:minmax(0,1.08fr) minmax(330px,.92fr);height:calc(100% - 75px);min-height:0}
+.co20-checkout .co18-form-column{display:grid;align-content:center;padding:26px clamp(28px,5vw,74px)}
+.co20-checkout .co18-step-view h2{margin:6px 0 4px;font-size:32px}
+.co20-checkout .co18-account{margin:13px 0 19px}
+.co20-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px 14px}
+.co20-fields .co18-field input{height:46px}
+.co20-fields .co18-field--wide{grid-column:1/-1}
+.co20-inline-note{display:flex;align-items:center;gap:8px;margin:18px 0 0;color:#79868d;font-size:10px}
+.co20-inline-note span{color:#b4873e;font-size:16px}
+.co20-checkout .co18-actions{margin-top:14px}.co20-checkout .co18-account,.co20-checkout .co20-inline-note{display:none!important}.co20-checkout .co20-fields .co18-field input{height:42px}
+.co20-checkout .co18-summary{display:flex;flex-direction:column;justify-content:center;padding:28px clamp(24px,3.4vw,46px)}
+.co20-checkout .co18-summary-heading{margin-bottom:12px}
+.co20-checkout .co18-product{grid-template-columns:74px minmax(0,1fr) auto;gap:13px;padding:17px 0}
+.co20-checkout .co18-thumb{width:74px;height:78px}
+.co20-checkout .co18-product-info>b{font-size:13px}
+.co20-checkout .co18-product-info>small{gap:7px;font-size:10px}
+.co20-checkout .co18-product>strong{font-size:12px}
+.co20-checkout .co18-product--deal .co18-product-info>small strong,.co20-checkout .co18-product--deal>strong>b{font-size:13px}
+.co20-checkout .co18-product-info em{font-size:9px}
+.co20-checkout .co18-quantity{top:10px;left:63px;width:20px;height:20px}
+.co20-checkout .co18-promo-toggle{margin-top:13px;padding:11px 0}
+.co20-checkout .co18-totals{gap:10px;margin-top:17px;font-size:12px}
+.co20-checkout .co18-total{margin-top:4px;padding-top:12px;font-size:15px}
+.co20-checkout .co18-total strong{font-size:18px}
+.co20-checkout .co18-safe-note{margin-top:17px}
+.co20-checkout .co18-complete{min-height:300px}
+
+/* Recorded-pointer treatment: a small finger cursor, then a precise click ripple. */
+.co-offer[data-cursor-copy] .co-pointer{width:48px;height:60px;filter:none}
+.co-offer[data-cursor-copy] .co-pointer svg{position:relative;z-index:2;width:40px;height:52px;filter:drop-shadow(0 3px 2px rgba(14,34,47,.24))}
+.co-offer[data-cursor-copy] .co-pointer span.co-recording-halo{position:absolute;z-index:0;left:-10px;top:-7px;width:43px;height:43px;padding:0;border:1px solid transparent;border-radius:50%;background:transparent;opacity:0;transform:scale(.72)}
+.co-offer[data-cursor-copy] .co-pointer span.co-recording-ripple{position:absolute;z-index:1;left:-2px;top:1px;width:28px;height:28px;padding:0;border:2px solid #4a9de6;border-radius:50%;background:transparent;opacity:0;transform:scale(.45)}
+.co-offer[data-cursor-copy] .co-pointer span.co-recording-label{position:absolute;z-index:3;left:25px;top:38px;padding:4px 6px;border:1px solid rgba(17,42,59,.12);border-radius:10px;background:#17384d;color:#fff;font-size:7px;font-weight:800;letter-spacing:.1em;line-height:1;opacity:0;transform:translateY(3px) scale(.8);white-space:nowrap}
+.co-offer[data-cursor-copy] .co-pointer span{animation:none}
+.co-offer[data-cursor-copy] .co-pointer.co-pointer-clicked span.co-recording-ripple{animation:co20-ring .52s cubic-bezier(.16,.72,.25,1) both}
+.co-offer[data-cursor-copy] .co-pointer.co-pointer-clicked span.co-recording-label{animation:co20-label .3s cubic-bezier(.18,.8,.25,1) both}
+.co-offer[data-cursor-copy="20"] .co-pointer.co-pointer-clicked span.co-recording-halo{border-color:rgba(74,157,230,.42);opacity:.6;animation:co20-halo .45s ease-out both}
+.co-offer[data-cursor-copy="21"] .co-pointer span.co-recording-halo{border-color:rgba(55,158,202,.2);background:rgba(85,184,226,.12);opacity:1;transform:scale(1)}
+.co-offer[data-cursor-copy="21"] .co-pointer span.co-recording-ripple{border-color:#36a9bb}
+.co-offer[data-cursor-copy="21"] .co-pointer span.co-recording-label{background:#147a89}
+.co-offer[data-cursor-copy="21"] .co-pointer.co-pointer-clicked span.co-recording-halo{animation:co21-halo .62s ease-out both}
+.co-offer[data-cursor-copy="22"] .co-pointer span.co-recording-halo{left:-13px;top:-10px;width:49px;height:49px;border-color:rgba(226,172,68,.42);background:rgba(255,215,129,.18);opacity:1;transform:scale(1)}
+.co-offer[data-cursor-copy="22"] .co-pointer span.co-recording-ripple{border-color:#d49d38}
+.co-offer[data-cursor-copy="22"] .co-pointer span.co-recording-label{background:#9a6c20;color:#fff7e5}
+.co-offer[data-cursor-copy="22"] .co-pointer.co-pointer-clicked span.co-recording-halo{animation:co22-halo .72s cubic-bezier(.16,.8,.25,1) both}
+@keyframes co20-ring{0%{opacity:.9;transform:scale(.5)}100%{opacity:0;transform:scale(2.05)}}
+@keyframes co20-label{0%{opacity:0;transform:translateY(3px) scale(.8)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes co20-halo{0%{opacity:.1;transform:scale(.6)}100%{opacity:.65;transform:scale(1.5)}}
+@keyframes co21-halo{0%{opacity:.25;transform:scale(.8)}45%{opacity:.75;transform:scale(1.3)}100%{opacity:.2;transform:scale(1.7)}}
+@keyframes co22-halo{0%{opacity:.2;transform:scale(.76)}36%{opacity:.9;transform:scale(1.22)}100%{opacity:0;transform:scale(1.85)}}
+
+@media(max-width:760px){.co20-checkout .co18-sheet{width:100vw;height:100vh;height:100dvh;overflow:hidden}.co20-checkout .co18-header{padding:12px 16px 9px;gap:10px}.co20-checkout .co18-grid{grid-template-columns:1fr;height:calc(100% - 76px);min-height:0;overflow:hidden}.co20-checkout .co18-form-column{padding:12px 18px 10px}.co20-checkout .co18-step-view h2{font-size:27px;margin:4px 0 2px}.co20-checkout .co18-intro{font-size:12px}.co20-checkout .co18-account{margin:7px 0 9px}.co20-fields{gap:8px 10px}.co20-fields .co18-field input{height:38px}.co20-inline-note{display:none}.co20-checkout .co18-summary{padding:8px 18px;border-top:1px solid #e7e9ea;border-left:0}.co20-checkout .co18-summary-heading{margin-bottom:3px}.co20-checkout .co18-summary-heading h3{font-size:14px}.co20-checkout .co18-product{grid-template-columns:45px minmax(0,1fr) auto;gap:8px;padding:6px 0}.co20-checkout .co18-thumb{width:42px;height:44px}.co20-checkout .co18-product-info>b{font-size:10px}.co20-checkout .co18-product-info>small{gap:4px}.co20-checkout .co18-product-info em{font-size:8px;padding:2px 5px}.co20-checkout .co18-product>strong{font-size:10px}.co20-checkout .co18-product--deal .co18-product-info>small strong,.co20-checkout .co18-product--deal>strong>b{font-size:11px}.co20-checkout .co18-quantity{left:35px;top:1px;width:17px;height:17px;font-size:8px}.co20-checkout .co18-promo-toggle{margin-top:3px;padding:5px 0;font-size:10px}.co20-checkout .co18-totals{gap:4px;margin-top:5px;font-size:10px}.co20-checkout .co18-total{margin-top:1px;padding-top:5px;font-size:12px}.co20-checkout .co18-total strong{font-size:13px}.co20-checkout .co18-safe-note{display:none}.co20-checkout .co18-actions{align-items:center;flex-direction:row;gap:8px;margin-top:11px}.co20-checkout .co18-text-button{padding:7px 0;font-size:10px;white-space:nowrap}.co20-checkout .co18-primary{width:auto;flex:1;min-height:39px;padding:0 12px;gap:10px;font-size:10px}.co20-checkout .co18-complete{min-height:240px}}
+@media(max-width:430px){.co20-checkout .co18-form-column{padding:15px 14px 11px}.co20-checkout .co18-step-view h2{font-size:26px}.co20-checkout .co18-account{margin:8px 0 12px}.co20-fields{gap:8px 9px}.co20-fields .co18-field input{height:39px}.co20-checkout .co18-actions{margin-top:11px}.co20-checkout .co18-summary{padding:11px 14px}.co20-checkout .co18-product-info>b{font-size:11px}.co20-checkout .co18-product{grid-template-columns:48px minmax(0,1fr) auto;gap:8px}.co20-checkout .co18-thumb{width:48px;height:50px}.co20-checkout .co18-quantity{left:38px}}
+@media(prefers-reduced-motion:reduce){.co-offer[data-cursor-copy] .co-pointer.co-pointer-clicked span.co-recording-halo,.co-offer[data-cursor-copy] .co-pointer.co-pointer-clicked span.co-recording-ripple,.co-offer[data-cursor-copy] .co-pointer.co-pointer-clicked span.co-recording-label{animation-duration:.01ms!important}}

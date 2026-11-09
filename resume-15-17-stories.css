@@ -1,0 +1,46 @@
+/* Hand-drawn story lines: the divider rails unravel into each scene, then draw back into place. */
+.story-variant-15 .review-section,.story-variant-16 .review-section,.story-variant-17 .review-section{border-bottom:0!important}
+.story-variant-15 .portfolio-section,.story-variant-16 .portfolio-section,.story-variant-17 .portfolio-section{border-top:0!important;margin-top:0;padding-top:22px}
+.story-divider{position:relative;height:44px;margin:0;overflow:hidden;color:#111;transition:height .55s cubic-bezier(.2,.8,.2,1)}
+.story-divider[data-state="playing"]{height:154px}
+.story-rail{position:absolute;z-index:2;left:0;right:0;height:1px;background:#111;opacity:1;transform:scaleX(1);transition:opacity .2s}
+.story-rail--top{top:12px;transform-origin:left center}
+.story-rail--bottom{bottom:12px;transform-origin:right center}
+.story-divider.is-playing .story-rail{animation:rail-unravel 6.6s ease both}
+.story-arena{position:absolute;inset:4px 0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .2s ease .08s}
+.story-divider[data-state="playing"] .story-arena{opacity:1;visibility:visible}
+.story-drawing{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.story-drawing .thread{fill:none;stroke:#111;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:100 100;stroke-dashoffset:100;opacity:0}
+.story-drawing .thread--accent{stroke-width:1.6}
+.story-divider.is-playing .thread--lead{animation:thread-unspool 6.6s cubic-bezier(.18,.65,.3,1) both}
+.story-divider.is-playing .thread--support{animation:thread-unspool 6.25s cubic-bezier(.18,.65,.3,1) .16s both}
+.story-divider.is-playing .thread--detail{animation:thread-unspool 5.95s cubic-bezier(.18,.65,.3,1) .34s both}
+.story-divider.is-playing .thread--detail-late{animation:thread-unspool 5.65s cubic-bezier(.18,.65,.3,1) .52s both}
+.story-drawing text{fill:#111;stroke:none;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:1.2px}
+.story-caption,.story-note{position:absolute;z-index:1;left:50%;transform:translateX(-50%);white-space:nowrap;pointer-events:none;color:#222}
+.story-caption{top:9px;font:700 8px/1 Arial,Helvetica,sans-serif;letter-spacing:.2em;opacity:0}
+.story-note{bottom:7px;font:700 8px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;opacity:0}
+.story-divider.is-playing .story-caption{animation:caption-show 6.6s ease both}
+.story-divider.is-playing .story-note{animation:note-show 6.6s ease both}
+.story-divider.is-static .story-caption,.story-divider.is-static .story-note{opacity:1}
+.story-divider.is-static .story-drawing .thread{opacity:1;stroke-dashoffset:0}
+.story-replay{position:absolute;z-index:5;left:50%;top:50%;width:30px;height:30px;display:grid;place-items:center;padding:0;transform:translate(-50%,-50%);border:0;border-radius:50%;background:#111;color:#fff;cursor:pointer;box-shadow:0 0 0 4px #fff,0 0 0 5px #111;transition:transform .2s,background .2s,color .2s}
+.story-replay svg{width:15px;height:15px;fill:currentColor;margin-left:2px}
+.story-replay:hover,.story-replay:focus-visible{transform:translate(-50%,-50%) scale(1.18);background:#fff;color:#111;outline:none}
+.story-divider[data-state="playing"] .story-replay{display:none}
+.story-replay[hidden]{display:none!important}
+.story-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes rail-unravel{0%,5%{opacity:1;transform:scaleX(1)}12%,87%{opacity:0;transform:scaleX(.01)}100%{opacity:1;transform:scaleX(1)}}
+@keyframes thread-unspool{0%,9%{opacity:0;stroke-dashoffset:100}15%{opacity:1;stroke-dashoffset:82}50%,74%{opacity:1;stroke-dashoffset:0}91%,100%{opacity:0;stroke-dashoffset:100}}
+@keyframes caption-show{0%,10%{opacity:0;letter-spacing:.45em}18%,74%{opacity:1;letter-spacing:.2em}88%,100%{opacity:0}}
+@keyframes note-show{0%,68%{opacity:0;transform:translate(-50%,6px)}78%,87%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-3px)}}
+@media(max-width:700px){.story-divider[data-state="playing"]{height:128px}.story-caption{top:8px;font-size:6px;letter-spacing:.12em}.story-note{bottom:6px;font-size:6px;letter-spacing:.08em}.story-drawing .thread{stroke-width:2.1}}
+@media(prefers-reduced-motion:reduce){.story-divider,.story-rail,.story-arena,.story-replay{transition-duration:.01ms!important}}
+
+/* Quiet hand-drawn underline for the section links. */
+.story-variant-15 .v-top nav:not(.resume-mobile-nav) a,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a{position:relative;text-decoration:none!important}
+.story-variant-15 .v-top nav:not(.resume-mobile-nav) a::after,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a::after,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:5px;border-bottom:1px solid currentColor;border-radius:0 0 56% 44%;transform:scaleX(0);transform-origin:left center;transition:transform .34s cubic-bezier(.2,.8,.2,1)}
+.story-variant-15 .v-top nav:not(.resume-mobile-nav) a::before,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a::before,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a::before{content:"";position:absolute;right:-3px;bottom:-5px;width:3px;height:3px;border-radius:50%;background:currentColor;transform:scale(0);transform-origin:center;transition:transform .18s ease .22s}
+.story-variant-15 .v-top nav:not(.resume-mobile-nav) a:hover::after,.story-variant-15 .v-top nav:not(.resume-mobile-nav) a:focus-visible::after,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a:hover::after,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a:focus-visible::after,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a:hover::after,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a:focus-visible::after{transform:scaleX(1)}
+.story-variant-15 .v-top nav:not(.resume-mobile-nav) a:hover::before,.story-variant-15 .v-top nav:not(.resume-mobile-nav) a:focus-visible::before,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a:hover::before,.story-variant-16 .v-top nav:not(.resume-mobile-nav) a:focus-visible::before,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a:hover::before,.story-variant-17 .v-top nav:not(.resume-mobile-nav) a:focus-visible::before{transform:scale(1)}
+@media(prefers-reduced-motion:reduce){.story-variant-15 .v-top nav a::before,.story-variant-15 .v-top nav a::after,.story-variant-16 .v-top nav a::before,.story-variant-16 .v-top nav a::after,.story-variant-17 .v-top nav a::before,.story-variant-17 .v-top nav a::after{transition-duration:.01ms!important}}

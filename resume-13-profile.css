@@ -1,0 +1,126 @@
+/* A fresh profile layout branching from variant 10. */
+.variant-13{--corner-ink:#111}
+.variant-13 .v-metrics div{position:relative;padding:16px 20px}
+.variant-13 .v-metrics div:first-child{padding-left:20px}
+.variant-13 .v-metrics div:hover{color:#fff;background:#111}
+.variant-13 .v-metrics div:hover *{color:#fff!important}
+.variant-13 .v-metrics div b{transition:color .25s}
+.variant-13 .v-metrics div span{display:block;margin-top:6px;color:#555;font-size:15px;line-height:1.4;transition:color .25s}
+.variant-13 .about-strip{display:grid;grid-template-columns:minmax(180px,.42fr) minmax(0,1.58fr);gap:18px 30px;padding:28px 0 25px;border-bottom:1px solid #111}
+.variant-13 .about-strip>.section-heading{grid-row:span 2;align-self:start}
+.variant-13 .profile-copy{max-width:880px;margin:0;font-size:17px;line-height:1.8}
+.variant-13 .profile-copy p{margin:0 0 13px}
+.variant-13 .profile-copy p:last-child{margin-bottom:0}
+.variant-13 .profile-key{font-weight:700;text-decoration:underline;text-decoration-style:solid;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:#111}
+.variant-13 .about-facts{grid-column:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:12px;border-top:1px solid #aaa}
+.variant-13 .about-fact{display:grid;align-content:start;gap:5px;min-height:74px;padding:12px 14px;transition:background .25s,color .25s,transform .25s}
+.variant-13 .about-fact strong{display:block;font-size:19px;line-height:1.2;letter-spacing:-.03em}
+.variant-13 .about-fact span{display:block;margin:0;color:#555;font-size:16.5px;line-height:1.4}
+.variant-13 .about-fact:hover{background:#111;color:#fff;transform:translateY(-3px)}
+.variant-13 .about-fact:hover span{color:#fff}
+.variant-13 .corner-frame{position:relative;isolation:isolate}
+.variant-13 .corner-frame::after{content:"";position:absolute;z-index:3;inset:5px;pointer-events:none;opacity:.88;background:linear-gradient(currentColor,currentColor) left top/15px 1px no-repeat,linear-gradient(currentColor,currentColor) left top/1px 15px no-repeat,linear-gradient(currentColor,currentColor) right top/15px 1px no-repeat,linear-gradient(currentColor,currentColor) right top/1px 15px no-repeat,linear-gradient(currentColor,currentColor) left bottom/15px 1px no-repeat,linear-gradient(currentColor,currentColor) left bottom/1px 15px no-repeat,linear-gradient(currentColor,currentColor) right bottom/15px 1px no-repeat,linear-gradient(currentColor,currentColor) right bottom/1px 15px no-repeat;transition:opacity .2s,transform .25s}
+.variant-13 .corner-frame:hover::after{opacity:1;transform:scale(.97)}
+.variant-13 .v-panel:hover{color:#fff}
+.variant-13 .v-panel:hover h3,.variant-13 .v-panel:hover p{color:#fff}
+.variant-13 .v-panel:hover .plugin-title-link{color:#fff}
+.variant-13 .v-panel.corner-frame::after{color:#111}
+.variant-13 .v-panel:hover.corner-frame::after{color:#fff}
+.variant-13 .v-metrics .corner-frame::after{color:#111}
+.variant-13 .v-metrics .corner-frame:hover::after{color:#fff}
+.variant-13 .about-fact.corner-frame::after{color:#111}
+.variant-13 .about-fact:hover.corner-frame::after{color:#fff}
+@media(max-width:800px){.variant-13 .about-strip{grid-template-columns:1fr;gap:16px}.variant-13 .about-strip>.section-heading{grid-row:auto}.variant-13 .about-facts{grid-column:1}}
+@media(max-width:600px){.variant-13 .about-facts{grid-template-columns:1fr;gap:8px}.variant-13 .about-fact{min-height:0}.variant-13 .profile-copy{font-size:17px;line-height:1.75}.variant-13 .v-metrics div{padding:13px 10px}.variant-13 .v-metrics div:first-child{padding-left:10px}}
+@media(prefers-reduced-motion:reduce){.variant-13 .corner-frame::after,.variant-13 .about-fact,.variant-13 .v-metrics div{transition-duration:.01ms!important}}
+/* Variant 13: restore complete square outlines around the cards. */
+.variant-13 .corner-frame{border:1px solid #111}
+.variant-13 .corner-frame::after{content:none;background:none;border:0}
+.variant-13 .v-metrics{border:0;gap:12px;padding:12px 0}
+.v4-page.variant-13 .v-metrics div{border:1px solid #111}
+.v4-page.variant-13 .v-metrics div:first-child{padding-left:20px}
+.variant-13 .about-facts{border-top:0;padding-top:0}
+.variant-13 .v-metrics .corner-frame:hover,.variant-13 .about-fact.corner-frame:hover,.variant-13 .v-panel.corner-frame:hover{border-color:#fff}
+@media(max-width:600px){.variant-13 .v-metrics{gap:8px}.v4-page.variant-13 .v-metrics div{border:1px solid #111}.v4-page.variant-13 .v-metrics div:first-child{padding-left:10px}}
+/* Main menu: a compact square signal travels along the underline and leaves an echo. */
+@media(min-width:801px){
+  .variant-13 .v-top nav a{position:relative;text-decoration:none!important}
+  .variant-13 .v-top nav a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left center;transition:transform .48s cubic-bezier(.2,.7,.15,1)}
+  .variant-13 .v-top nav a::before{content:"";position:absolute;left:0;bottom:-9px;width:4px;height:4px;background:currentColor;box-shadow:-5px 0 0 rgba(17,17,17,.28);opacity:0;transition:left .58s cubic-bezier(.2,.75,.2,1),opacity .1s ease}
+  .variant-13 .v-top nav a:hover::after,.variant-13 .v-top nav a:focus-visible::after{transform:scaleX(1)}
+  .variant-13 .v-top nav a:hover::before,.variant-13 .v-top nav a:focus-visible::before{left:calc(100% - 4px);opacity:1}
+}
+@media(prefers-reduced-motion:reduce){.variant-13 .v-top nav a::before,.variant-13 .v-top nav a::after{transition-duration:.01ms!important}}
+/* Animation 30 sits inside the existing two-rule divider between feedback and projects. */
+.variant-13 .review-section{border-bottom:0}
+.variant-13 .portfolio-section{border-top:0;margin-top:0;padding-top:22px}
+.variant-13 .story-gear-divider{margin:0}
+.variant-13 .story-gear-divider .story-drawing .rail{fill:none;stroke:#aaa8a1;stroke-width:1.1;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:100 100;stroke-dashoffset:0}
+.variant-13 .story-gear-divider .story-drawing .thread{stroke-width:1.05}
+.variant-13 .story-gear-divider .story-caption{top:8px;font-size:9px;letter-spacing:.12em}
+.variant-13 .story-gear-divider .story-note{bottom:6px;width:min(94%,900px);white-space:normal;text-align:center;font-size:8px;line-height:1.35;letter-spacing:.015em}
+.variant-13 .story-gear-divider .gear-wheel{transform-box:fill-box;transform-origin:center}
+.variant-13 .story-gear-divider.is-playing .gear-wheel--one,.variant-13 .story-gear-divider.is-playing .gear-wheel--three{animation:gear-turn-cw 2.05s linear 5.65s 1 both}
+.variant-13 .story-gear-divider.is-playing .gear-wheel--two{animation:gear-turn-ccw 2.05s linear 5.65s 1 both}
+.variant-13 .story-gear-divider .gear-label{opacity:0;fill:#111;font:700 9px Arial,sans-serif;letter-spacing:1.5px;text-anchor:middle}
+.variant-13 .story-gear-divider.is-playing .gear-label{animation:gear-label-reveal 9.05s ease both}
+.variant-13 .story-gear-divider.is-static .gear-label{opacity:1}
+.variant-13 .story-gear-divider.is-playing .story-rail{animation-duration:9.45s}
+.variant-13 .story-gear-divider.is-playing .thread--lead{animation-duration:9s}
+.variant-13 .story-gear-divider.is-playing .thread--support{animation-duration:8.7s}
+.variant-13 .story-gear-divider.is-playing .thread--detail{animation-duration:8.4s}
+.variant-13 .story-gear-divider.is-playing .thread--late{animation-duration:8s}
+.variant-13 .story-gear-divider.is-playing .story-caption{animation-duration:9.05s}
+.variant-13 .story-gear-divider .story-note{font-size:9px}
+.variant-13 .story-gear-divider.is-playing .story-note{animation-name:gear-note-read;animation-duration:9.05s}
+@keyframes gear-turn-cw{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes gear-turn-ccw{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+@keyframes gear-label-reveal{0%,38%{opacity:0}48%,78%{opacity:1}92%,100%{opacity:0}}
+@keyframes gear-note-read{0%,68%{opacity:0;transform:translate(-50%,6px)}73%,94%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-3px)}}
+@media(max-width:700px){.variant-13 .story-gear-divider .story-caption{top:7px;font-size:7px;letter-spacing:.08em}.variant-13 .story-gear-divider .story-note{bottom:5px;width:92%;font-size:7px;line-height:1.3}}
+@media(prefers-reduced-motion:reduce){.variant-13 .story-gear-divider .gear-wheel{animation:none!important}.variant-13 .story-gear-divider.is-playing .gear-label{animation:none;opacity:1}}
+/* Make each contract title easy to scan beneath its review. */
+.variant-13 .review-attribution{font:700 14px/1.4 Arial,Helvetica,sans-serif;color:#222}
+.variant-13 .review-rating{font-size:12px}
+.variant-13 .review-rating .stars{font-size:15px}
+.variant-13 .review-verification{position:relative;margin:12px 0 0;padding:10px 14px;border-left:4px solid #111;color:#333;font:13px/1.55 Arial,Helvetica,sans-serif}
+.variant-13 .review-verification strong{color:#111;font-weight:700}
+.variant-13 .review-verification a{margin-left:5px;color:#111;font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+@media(max-width:600px){.variant-13 .review-verification{padding:9px 11px}}
+/* Monochrome abstract ink textures for the three headline metrics. */
+.variant-13 .v-metrics .corner-frame{position:relative;isolation:isolate;overflow:hidden}
+.variant-13 .v-metrics .corner-frame::before{content:"";position:absolute;z-index:0;inset:1px;pointer-events:none;opacity:0;background-color:#111;transform:scale(1.06);transition:opacity .28s ease,transform .4s cubic-bezier(.2,.8,.2,1),background-position .7s cubic-bezier(.2,.8,.2,1)}
+.variant-13 .v-metrics .corner-frame:nth-child(1)::before{background-image:linear-gradient(125deg,transparent 0 54%,rgba(255,255,255,.13) 54.2% 54.8%,transparent 55%),repeating-linear-gradient(135deg,transparent 0 8px,rgba(255,255,255,.11) 8px 9px,transparent 9px 18px);background-size:100% 100%,200% 200%;background-position:0 0,-24px -12px}
+.variant-13 .v-metrics .corner-frame:nth-child(2)::before{background-image:radial-gradient(circle,rgba(255,255,255,.3) 0 1px,transparent 1.4px),linear-gradient(115deg,transparent 0 66%,rgba(255,255,255,.1) 66.2% 66.7%,transparent 67%);background-size:10px 10px,100% 100%;background-position:0 0,0 0}
+.variant-13 .v-metrics .corner-frame:nth-child(3)::before{background-image:repeating-radial-gradient(circle at 82% 48%,rgba(255,255,255,.16) 0 1px,transparent 1.2px 8px),linear-gradient(125deg,transparent 0 43%,rgba(255,255,255,.1) 43.2% 43.7%,transparent 44%);background-size:100% 100%,100% 100%;background-position:8px 0,0 0}
+.variant-13 .v-metrics .corner-frame b,.variant-13 .v-metrics .corner-frame span{position:relative;z-index:1}
+.variant-13 .v-metrics .corner-frame:hover::before,.variant-13 .v-metrics .corner-frame:focus-within::before{opacity:1;transform:scale(1);background-position:0 0,0 0}
+@media(prefers-reduced-motion:reduce){.variant-13 .v-metrics .corner-frame::before{transition-duration:.01ms!important}}
+
+/* Variant 13 section titles follow the projects heading: icon at left, index above title. */
+.variant-13 .section-heading{display:grid;grid-template-columns:56px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;gap:1px 14px}
+.variant-13 .section-heading>.icon-wrap{position:relative;grid-column:1;grid-row:1/3;width:56px;height:56px;border:1px solid #111;border-radius:50%;color:#111}
+.variant-13 .section-heading>.icon-wrap::before,.variant-13 .section-heading>.icon-wrap::after{content:"";position:absolute;inset:-7.2px;pointer-events:none;border:1px solid transparent;border-top-color:#111;border-radius:50%;clip-path:inset(0 20% 54% 20%);transition:transform .7s cubic-bezier(.2,.75,.2,1),opacity .3s ease}
+.variant-13 .section-heading>.icon-wrap::before{transform:rotate(var(--arc-a-angle,0deg))}
+.variant-13 .section-heading>.icon-wrap::after{transform:rotate(var(--arc-b-angle,180deg));opacity:.72}
+.variant-13 .section-heading:hover>.icon-wrap::before,.variant-13 .section-heading:focus-within>.icon-wrap::before{transform:rotate(calc(var(--arc-a-angle,0deg) + var(--arc-turn-a,20deg)))}
+.variant-13 .section-heading:hover>.icon-wrap::after,.variant-13 .section-heading:focus-within>.icon-wrap::after{transform:rotate(calc(var(--arc-b-angle,180deg) + var(--arc-turn-b,-20deg)));opacity:1}
+.variant-13 .section-heading>.icon-wrap svg{width:27px;height:27px}
+.variant-13 .section-heading>.section-index{grid-column:2;grid-row:1;align-self:end;color:#111;font-size:10px;line-height:1.3;letter-spacing:.13em;text-transform:uppercase}
+.variant-13 .section-heading>h2{grid-column:2;grid-row:2;align-self:start;margin:0;display:block;font-size:27px;line-height:1.12;letter-spacing:-.03em}
+.variant-13 .portfolio-heading{display:grid;grid-template-columns:56px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;gap:1px 14px;margin-bottom:14px}
+.variant-13 .portfolio-heading .section-index{grid-column:2;grid-row:1}
+.variant-13 .portfolio-heading>.icon-wrap{grid-column:1;grid-row:1/3}
+.variant-13 .portfolio-heading h2{grid-column:2;grid-row:2;margin:0;font-size:27px;line-height:1.12}
+@media(max-width:600px){.variant-13 .section-heading,.variant-13 .portfolio-heading{grid-template-columns:48px minmax(0,1fr);column-gap:12px}.variant-13 .section-heading>.icon-wrap{width:48px;height:48px}.variant-13 .section-heading>.icon-wrap svg{width:23px;height:23px}.variant-13 .section-heading>h2,.variant-13 .portfolio-heading h2{font-size:23px}}
+.variant-13 .about-strip>.section-heading{--arc-a-angle:-126deg;--arc-b-angle:42deg;--arc-turn-a:24deg;--arc-turn-b:-18deg}
+.variant-13 .review-heading .section-heading{--arc-a-angle:-78deg;--arc-b-angle:102deg;--arc-turn-a:-20deg;--arc-turn-b:26deg}
+.variant-13 .portfolio-heading{--arc-a-angle:-24deg;--arc-b-angle:156deg;--arc-turn-a:18deg;--arc-turn-b:-24deg}
+.variant-13 #experience .section-heading{--arc-a-angle:18deg;--arc-b-angle:198deg;--arc-turn-a:-27deg;--arc-turn-b:17deg}
+.variant-13 .impact-section .section-heading{--arc-a-angle:62deg;--arc-b-angle:242deg;--arc-turn-a:21deg;--arc-turn-b:-29deg}
+.variant-13 #plugins .section-heading{--arc-a-angle:112deg;--arc-b-angle:292deg;--arc-turn-a:-18deg;--arc-turn-b:22deg}
+.variant-13 #skills .section-heading{--arc-a-angle:156deg;--arc-b-angle:336deg;--arc-turn-a:26deg;--arc-turn-b:-19deg}
+.variant-13 #skills+.v-section .section-heading{--arc-a-angle:204deg;--arc-b-angle:24deg;--arc-turn-a:-23deg;--arc-turn-b:20deg}
+.variant-13 .collab-copy>.section-heading{--arc-a-angle:-96deg;--arc-b-angle:84deg;--arc-turn-a:20deg;--arc-turn-b:-25deg}
+.variant-13 .v-section>.section-heading,.variant-13 .collab-copy>.section-heading{margin-bottom:15px}
+@media(prefers-reduced-motion:reduce){.variant-13 .section-heading>.icon-wrap::before,.variant-13 .section-heading>.icon-wrap::after{transition-duration:.01ms!important}}

@@ -1,0 +1,23 @@
+/* Game-project CTA flourishes. The existing 180-degree cart entrance stays intact. */
+.co-game-action-mark{position:absolute;z-index:6;top:-13px;right:7px;display:grid;place-items:center;min-height:18px;padding:2px 6px;border:1px solid #d8dfe2;border-radius:2px;background:#fff;color:#173f5c;font-size:6px;font-weight:900;letter-spacing:.1em;line-height:1;opacity:0;transform:translateY(7px) scale(.82);pointer-events:none}
+.co-game-action-mark::before{content:""}
+.co-offer[data-concept^="lemming-29"].co-is-running .co-add-button{animation:co-game-trigger-29 .82s .08s cubic-bezier(.2,.7,.24,1) both}
+.co-offer[data-concept^="lemming-29"].co-is-running .co-game-action-mark{animation:co-game-mark-29 .72s .46s ease-out both}
+.co-offer[data-concept^="lemming-30"].co-is-running .co-add-button{animation:co-game-trigger-30 .98s .06s cubic-bezier(.18,.76,.25,1) both}
+.co-offer[data-concept^="lemming-30"].co-is-running .co-game-action-mark{animation:co-game-mark-30 .86s .48s cubic-bezier(.2,.75,.25,1) both}
+.co-offer[data-concept^="lemming-31"].co-is-running .co-add-button{animation:co-game-trigger-31 1.08s .04s cubic-bezier(.16,.82,.24,1) both}
+.co-offer[data-concept^="lemming-31"].co-is-running .co-game-action-mark{animation:co-game-mark-31 1s .42s cubic-bezier(.16,.84,.24,1) both}
+.co-offer[data-concept^="lemming-29"] .co-game-action-mark::before{content:"RELEASE"}
+.co-offer[data-concept^="lemming-30"] .co-game-action-mark::before{content:"TARGET LOCK"}
+.co-offer[data-concept^="lemming-31"] .co-game-action-mark::before{content:"LEVEL CLEAR · COUPON UNLOCKED"}
+.co-offer[data-concept^="lemming-29"].co-is-running .co-add-button.co-is-pressed{box-shadow:0 1px 0 #bd3b48,0 3px 8px rgba(97,24,34,.16),0 0 0 5px rgba(217,163,71,.13)}
+.co-offer[data-concept^="lemming-30"].co-is-running .co-add-button.co-is-pressed{box-shadow:0 1px 0 #bd3b48,0 3px 8px rgba(97,24,34,.16),0 0 0 7px rgba(217,163,71,.12),0 0 0 14px rgba(217,163,71,.06)}
+.co-offer[data-concept^="lemming-31"].co-is-running .co-add-button.co-is-pressed{box-shadow:0 1px 0 #bd3b48,0 3px 8px rgba(97,24,34,.16),0 0 0 7px rgba(217,163,71,.13),0 0 0 16px rgba(217,163,71,.07)}
+@keyframes co-game-trigger-29{0%,100%{transform:translateY(0) scale(1)}30%{transform:translateY(3px) scale(.985)}58%{transform:translateY(-3px) scale(1.012)}78%{transform:translateY(1px) scale(.998)}}
+@keyframes co-game-mark-29{0%{opacity:0;transform:translate(-8px,8px) scale(.6) rotate(-8deg)}35%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}100%{opacity:0;transform:translate(11px,-15px) scale(.86) rotate(4deg)}}
+@keyframes co-game-trigger-30{0%,100%{transform:translateY(0) scale(1)}24%{transform:translateY(3px) scale(.98)}45%{transform:translateY(-2px) scale(1.015)}68%{transform:translateY(1px) scale(.995)}86%{transform:translateY(0) scale(1.008)}}
+@keyframes co-game-mark-30{0%{opacity:0;transform:translate(-12px,9px) scale(.64)}25%{opacity:1;transform:translate(0,0) scale(1)}67%{opacity:1;transform:translate(3px,-2px) scale(1.04)}100%{opacity:0;transform:translate(14px,-16px) scale(.9)}}
+@keyframes co-game-trigger-31{0%,100%{transform:translateY(0) scale(1)}18%{transform:translateY(3px) scale(.98)}36%{transform:translateY(-2px) scale(1.018)}53%{transform:translateY(1px) scale(.995)}72%{transform:translateY(-1px) scale(1.008)}90%{transform:translateY(0) scale(1)}}
+@keyframes co-game-mark-31{0%{opacity:0;transform:translate(-13px,10px) scale(.55) rotate(-5deg)}22%{opacity:1;transform:translate(0,0) scale(1) rotate(0)}58%{opacity:1;transform:translate(0,-2px) scale(1.04)}100%{opacity:0;transform:translate(18px,-22px) scale(.86) rotate(3deg)}}
+@media(max-width:720px){.co-game-action-mark{top:-11px;right:4px;min-height:16px;padding:2px 5px;font-size:5px}}
+@media(prefers-reduced-motion:reduce){.co-game-action-mark{opacity:0!important;animation:none!important}}

@@ -1,0 +1,47 @@
+/* Variant 31: align the live CTA over the artwork's monochrome Add to Cart control. */
+.co-offer-portfolio-31 .co-add-button {
+  right: -5.1%;
+  bottom: max(28px, calc(22.4% - 48px));
+  z-index: 7;
+  width: 54%;
+  max-width: 54%;
+  min-width: 0;
+  padding: 12px 14px;
+}
+.co-offer-portfolio-31 .co-slider {
+  overflow: visible;
+}
+.co-offer-portfolio-31 .co-bag-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border: 0;
+  border-radius: 0;
+}
+.co-offer-portfolio-31 .co-bag-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (min-width: 481px) and (max-width: 720px) {
+  .co-offer-portfolio-31 .co-add-button {
+    right: -5.1%;
+    bottom: 17%;
+    width: 54%;
+    max-width: 54%;
+    min-width: 0;
+    padding: 10px 8px;
+  }
+}
+@media (max-width: 480px) {
+  .co-offer-portfolio-31 .co-add-button {
+    bottom: 10%;
+  }
+}

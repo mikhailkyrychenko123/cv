@@ -1,0 +1,85 @@
+/* Family team section: seven restrained treatments sharing one responsive grid. */
+.family-section{padding-bottom:30px}
+.family-section>.section-heading{--arc-a-angle:-42deg;--arc-b-angle:138deg;--arc-turn-a:24deg;--arc-turn-b:-20deg}
+.family-intro{max-width:640px;margin:0 0 20px 70px;color:var(--muted);font-size:14px;line-height:1.65}
+.family-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,20px);align-items:stretch}
+.family-card{position:relative;display:flex;flex-direction:column;min-width:0;padding:12px;color:var(--ink);border:1px solid transparent;transition:background .22s ease,border-color .22s ease,transform .22s ease}
+.family-portrait{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:1/1;overflow:visible}
+.family-portrait img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .28s ease,filter .28s ease}
+.family-card:hover .family-portrait img{transform:translateY(-3px)}
+.family-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:11px 2px 2px;border-top:1px solid var(--line)}
+.family-role{display:block;margin:0 0 5px;color:var(--muted);font-size:9px;font-weight:700;line-height:1.4;letter-spacing:.12em;text-transform:uppercase}
+.family-copy h3{margin:0;color:var(--ink);font-size:17px;line-height:1.2;letter-spacing:-.02em}
+.family-quote{margin:8px 0 0;color:var(--muted);font:italic 14px/1.5 Georgia,'Times New Roman',serif}
+.family-number{position:absolute;z-index:1;top:10px;left:12px;color:var(--ink);font:700 10px/1 var(--sans,Arial,sans-serif);letter-spacing:.12em}
+.family-node{display:none}
+
+/* 01 — an orderly four-person team roster */
+.family-layout-01 .family-card{border-color:var(--line);padding:10px}
+.family-layout-01 .family-card:nth-child(1){border-top-width:2px}
+.family-layout-01 .family-copy{min-height:116px}
+
+/* 02 — open editorial portraits with an understated nameplate */
+.family-layout-02 .family-grid{gap:clamp(14px,2vw,28px)}
+.family-layout-02 .family-card{padding:0;border:0;border-top:1px solid var(--ink)}
+.family-layout-02 .family-portrait{margin-top:5px}
+.family-layout-02 .family-copy{padding:13px 5px 0;border-top:1px solid var(--line)}
+.family-layout-02 .family-quote{font-size:15px}
+
+/* 03 — a numbered portrait index */
+.family-layout-03 .family-card{padding:7px 10px 13px;border:1px solid var(--line)}
+.family-layout-03 .family-number{top:13px;left:15px;font-size:11px}
+.family-layout-03 .family-portrait{padding:8px}
+.family-layout-03 .family-copy{padding-left:8px;padding-right:8px}
+.family-layout-03 .family-copy h3{font:600 19px/1.1 Georgia,'Times New Roman',serif}
+
+/* 04 — a clean contact sheet, divided by a shared rule */
+.family-layout-04 .family-grid{gap:0;border:1px solid var(--line)}
+.family-layout-04 .family-card{padding:10px;border-right:1px solid var(--line)}
+.family-layout-04 .family-card:last-child{border-right:0}
+.family-layout-04 .family-portrait{border-bottom:1px solid var(--line)}
+.family-layout-04 .family-copy{border-top:0;padding-top:10px}
+
+/* 05 — four roles connected along one quiet team line */
+.family-layout-05 .family-grid{position:relative;padding-top:22px}
+.family-layout-05 .family-grid:before{content:"";position:absolute;top:7px;left:12.5%;right:12.5%;height:1px;background:var(--line)}
+.family-layout-05 .family-card{padding:0 10px 12px;border:0;text-align:center}
+.family-layout-05 .family-node{position:absolute;top:1px;left:calc(50% - 4px);display:block;width:9px;height:9px;border:1px solid var(--ink);background:var(--paper);border-radius:50%}
+.family-layout-05 .family-copy{align-items:center}
+.family-layout-05 .family-role{min-height:25px}
+
+/* 06 — framed portraits with compact dossier labels */
+.family-layout-06 .family-card{padding:0;border:1px solid var(--ink)}
+.family-layout-06 .family-portrait{padding:7px;background:var(--surface,#fff)}
+.family-layout-06 .family-copy{padding:11px 12px 13px;border-top:1px solid var(--ink)}
+.family-layout-06 .family-role{font-family:var(--mono,Consolas,monospace);letter-spacing:.08em}
+.family-layout-06 .family-quote{font:13px/1.45 var(--sans,Arial,sans-serif)}
+
+/* 07 — a print-like gallery with generous white space and serif remarks */
+.family-layout-07 .family-grid{gap:clamp(16px,2.1vw,30px)}
+.family-layout-07 .family-card{padding:0 0 12px;border-bottom:1px solid var(--ink)}
+.family-layout-07 .family-card:nth-child(odd){transform:translateY(7px)}
+.family-layout-07 .family-card:nth-child(odd):hover{transform:translateY(3px)}
+.family-layout-07 .family-copy{padding:11px 2px 0;border-top:0}
+.family-layout-07 .family-quote{font-size:14px}
+
+@media(max-width:760px){
+  .family-intro{margin-left:0}
+  .family-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .family-layout-04 .family-card:nth-child(2){border-right:0}
+  .family-layout-04 .family-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .family-layout-05 .family-grid:before{left:25%;right:25%;top:calc(25% + 10px);height:calc(50% - 10px);width:1px}
+  .family-layout-05 .family-card:nth-child(1),.family-layout-05 .family-card:nth-child(2){padding-bottom:22px}
+  .family-layout-05 .family-card:nth-child(3),.family-layout-05 .family-card:nth-child(4){padding-top:22px}
+  .family-layout-05 .family-card:nth-child(3) .family-node,.family-layout-05 .family-card:nth-child(4) .family-node{top:0}
+  .family-layout-07 .family-card:nth-child(odd){transform:none}
+}
+@media(max-width:420px){
+  .family-grid{gap:9px}
+  .family-card{padding:8px}
+  .family-layout-04 .family-card{padding:7px}
+  .family-copy h3{font-size:15px}
+  .family-role{font-size:8px;letter-spacing:.08em}
+  .family-quote{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.family-card,.family-portrait img{transition-duration:.01ms!important}.family-layout-07 .family-card:nth-child(odd){transform:none}}

@@ -1,0 +1,167 @@
+/* Three strict monochrome layouts based on resume-04. */
+.variant-07,.variant-08,.variant-09{--paper:#fff;--ink:#111;--muted:#4f4f4f;--line:#171717;--accent:#111;background:#fff;color:#111}
+.variant-07 .v-sheet{max-width:1240px;padding:24px 34px 48px}
+.variant-07 .v-top{border-bottom:1px solid #111}
+.variant-07 .v-top nav{gap:24px}
+.variant-07 .v-hero{grid-template-columns:minmax(0,1fr) 190px;gap:30px;padding:48px 0 33px}
+.variant-07 .v-hero h1{font-size:clamp(54px,8vw,88px)}
+.variant-07 .v-metrics{grid-template-columns:repeat(3,1fr);border:0;border-top:1px solid #111;border-bottom:1px solid #111}
+.variant-07 .v-metrics div{padding:15px 20px;border-right:1px solid #111}
+.variant-07 .v-metrics div:first-child{padding-left:0}
+.variant-07 .v-metrics div:last-child{border-right:0}
+.variant-07 .about-strip{display:grid;grid-template-columns:minmax(160px,.45fr) minmax(0,1.55fr);column-gap:28px;row-gap:16px;padding:27px 0 24px;border-bottom:1px solid #111}
+.variant-07 .about-strip .section-heading{grid-row:span 2;align-self:start}
+.variant-07 .about-copy{max-width:850px;margin:0;font-size:15px;line-height:1.7}
+.variant-07 .about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:9px}
+.variant-07 .about-fact{border-left:1px solid #111;padding-left:12px}
+.variant-07 .about-fact strong{display:block;font-size:18px;letter-spacing:-.03em}
+.variant-07 .about-fact span{display:block;margin-top:4px;color:#555;font-size:11px}
+.variant-07 .section-heading h2,.variant-08 .section-heading h2,.variant-09 .section-heading h2{display:flex;align-items:center;gap:11px;margin:0;font-size:22px;line-height:1.2}
+.section-heading{display:flex;align-items:center;gap:12px}
+.section-index{font-size:10px;font-weight:700;letter-spacing:.1em;color:#555}
+.icon-wrap{display:inline-grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid #111;color:#111}
+.icon-wrap svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.variant-07 .icon-wrap{width:23px;height:23px;border:0}
+.variant-07 .icon-wrap svg{width:22px;height:22px}
+.review-section{padding:28px 0 31px;border-bottom:1px solid #111}
+.review-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.review-slider{border:1px solid #111;padding:24px 27px 18px;min-height:210px}
+.review-slide[aria-hidden="true"]{display:none}
+.review-rating{display:flex;align-items:center;gap:11px;font-size:11px;font-weight:700;letter-spacing:.08em}
+.review-rating .stars{font-size:13px;letter-spacing:.15em}
+.review-quote{max-width:880px;margin:17px 0 16px;font:clamp(20px,2.8vw,33px)/1.35 Georgia,'Times New Roman',serif;letter-spacing:-.02em}
+.review-summary{max-width:880px;margin:18px 0 20px;font-size:clamp(16px,2.2vw,23px);line-height:1.5}
+.review-attribution{display:flex;flex-wrap:wrap;gap:8px 16px;color:#555;font-size:11px}
+.review-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:17px}
+.review-arrow{width:31px;height:31px;border:1px solid #111;border-radius:50%;background:#fff;color:#111;font:20px/1 Arial,sans-serif;cursor:pointer}
+.review-arrow:hover,.review-arrow:focus-visible{background:#111;color:#fff;outline:2px solid #111;outline-offset:2px}
+.review-count{min-width:42px;text-align:center;font-size:11px;font-variant-numeric:tabular-nums}
+.review-dots{display:flex;gap:6px}
+.review-dots button{width:8px;height:8px;padding:0;border:1px solid #111;border-radius:50%;background:#fff;cursor:pointer}
+.review-dots button[aria-current="true"]{background:#111}
+.review-note{margin:9px 0 0;color:#666;font-size:10px}
+.variant-07 .v-section,.variant-08 .v-section,.variant-09 .v-section{padding:27px 0;border-top:1px solid #111;margin-top:18px}
+.variant-07 .v-experience{grid-template-columns:160px 1fr}
+.variant-07 .portfolio-section{margin-top:0}
+.variant-07 .v-footer{border-top:1px solid #111}
+
+/* Editorial: oversized serif display, generous whitespace, one dark review field. */
+.variant-08 .v-sheet{max-width:1080px;padding:25px 38px 50px}
+.variant-08 .v-top{border:0;padding-bottom:20px}
+.variant-08 .v-top strong{font-family:Georgia,'Times New Roman',serif;font-size:15px;letter-spacing:.08em}
+.variant-08 .v-hero{grid-template-columns:minmax(0,1fr) 195px;gap:38px;padding:55px 0 38px;border-bottom:1px solid #111}
+.variant-08 .v-hero h1{font:normal clamp(58px,9vw,96px)/.92 Georgia,'Times New Roman',serif;letter-spacing:-.065em}
+.variant-08 .v-hero p{font:18px/1.6 Georgia,'Times New Roman',serif}
+.variant-08 .v-label{font-size:10px;letter-spacing:.2em}
+.variant-08 .v-metrics{grid-template-columns:repeat(3,1fr);border:0;border-bottom:1px solid #111}
+.variant-08 .v-metrics div{padding:19px 16px;border-right:0;border-left:1px solid #aaa}
+.variant-08 .v-metrics div:first-child{border-left:0;padding-left:0}
+.variant-08 .v-metrics b{font:normal 30px/1 Georgia,'Times New Roman',serif}
+.variant-08 .about-strip{padding:31px 0;display:grid;grid-template-columns:1fr 2fr;gap:23px 40px;border-bottom:1px solid #111}
+.variant-08 .about-strip .section-heading{align-self:start}
+.variant-08 .about-copy{margin:0;font:17px/1.8 Georgia,'Times New Roman',serif}
+.variant-08 .about-facts{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.variant-08 .about-fact{padding-top:10px;border-top:1px solid #111}
+.variant-08 .about-fact strong{display:block;font:normal 22px Georgia,'Times New Roman',serif}
+.variant-08 .about-fact span{display:block;margin-top:6px;color:#555;font-size:11px}
+.variant-08 .icon-wrap{border-radius:50%;width:34px;height:34px}
+.variant-08 .icon-wrap svg{width:18px;height:18px}
+.variant-08 .review-section{padding:33px 0;border:0}
+.variant-08 .review-slider{min-height:245px;background:#111;color:#fff;border:0;padding:28px 34px 18px}
+.variant-08 .review-rating{color:#fff}
+.variant-08 .review-quote{font:clamp(22px,3vw,36px)/1.38 Georgia,'Times New Roman',serif}
+.variant-08 .review-summary{font:clamp(18px,2.4vw,25px)/1.6 Georgia,'Times New Roman',serif}
+.variant-08 .review-attribution{color:#ccc}
+.variant-08 .review-arrow{border-color:#fff;background:#111;color:#fff}
+.variant-08 .review-arrow:hover,.variant-08 .review-arrow:focus-visible{background:#fff;color:#111}
+.variant-08 .review-dots button{border-color:#fff;background:transparent}
+.variant-08 .review-dots button[aria-current="true"]{background:#fff}
+.variant-08 .review-note{color:#666}
+.variant-08 .portfolio-section{border:0;margin-top:5px}
+.variant-08 .portfolio-heading h2{font:normal 31px Georgia,'Times New Roman',serif}
+.variant-08 .project-card{border:1px solid #111;box-shadow:none}
+.variant-08 .v-section{border-top:1px solid #111}
+.variant-08 .v-footer{border-top:1px solid #111}
+
+/* Blueprint: black masthead, numbered rail, crisp split panels. */
+.variant-09 .v-sheet{max-width:1200px;padding:0 32px 44px}
+.variant-09 .v-top{margin:0 -32px;padding:17px 32px;background:#111;color:#fff;border:0}
+.variant-09 .v-top strong,.variant-09 .v-top a{color:#fff!important}
+.variant-09 .v-top a:hover{text-decoration:underline;text-underline-offset:4px}
+.variant-09 .v-hero{grid-template-columns:minmax(0,1fr) 185px;gap:32px;padding:51px 0 30px;border-bottom:1px solid #111}
+.variant-09 .v-hero h1{font-size:clamp(58px,9vw,94px);font-weight:800;letter-spacing:-.075em}
+.variant-09 .v-label{display:inline-block;padding:6px 9px;border:1px solid #111}
+.variant-09 .v-metrics{grid-template-columns:repeat(3,1fr);border:0;border-bottom:1px solid #111;margin:0 -32px;padding:0 32px}
+.variant-09 .v-metrics div{padding:17px 18px;border-right:1px solid #111}
+.variant-09 .v-metrics div:first-child{padding-left:0}
+.variant-09 .v-metrics div:last-child{border:0}
+.variant-09 .v-metrics b{font-size:27px}
+.variant-09 .about-strip{display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px 28px;padding:28px 0;border-bottom:1px solid #111}
+.variant-09 .about-strip .section-heading{align-self:start}
+.variant-09 .about-copy{margin:0;max-width:850px;font-size:15px;line-height:1.7}
+.variant-09 .about-facts{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #aaa}
+.variant-09 .about-fact{padding:13px 12px;border-left:1px solid #aaa}
+.variant-09 .about-fact:first-child{border-left:0;padding-left:0}
+.variant-09 .about-fact strong{display:block;font-size:19px}
+.variant-09 .about-fact span{display:block;margin-top:3px;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.variant-09 .icon-wrap{width:27px;height:27px;transform:rotate(45deg)}
+.variant-09 .icon-wrap svg{transform:rotate(-45deg);width:17px;height:17px}
+.variant-09 .review-section{border-bottom:0}
+.variant-09 .review-slider{min-height:235px;border:0;border-left:4px solid #111;padding:22px 28px;background:#f5f5f5}
+.variant-09 .review-quote{font:clamp(22px,3.2vw,37px)/1.3 Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:-.045em}
+.variant-09 .review-summary{font-size:clamp(17px,2.2vw,24px);font-weight:600}
+.variant-09 .portfolio-section{border-top:0;margin-top:0}
+.variant-09 .portfolio-grid{gap:12px}
+.variant-09 .project-card{border:1px solid #111;box-shadow:none}
+.variant-09 .v-section{border-top:1px solid #111}
+.variant-09 .v-footer{border-top:1px solid #111}
+
+.variant-07 .project-media img,.variant-07 .project-slide img,.variant-08 .project-media img,.variant-08 .project-slide img,.variant-09 .project-media img,.variant-09 .project-slide img{filter:none}
+.variant-07 .project-card,.variant-08 .project-card,.variant-09 .project-card{color:#111}
+.variant-07 .v-top a,.variant-08 .v-top a,.variant-09 .v-top a{color:inherit;text-decoration:none}
+.variant-07 .project-link,.variant-08 .project-link,.variant-09 .project-link{color:#111;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.variant-07 .project-tag,.variant-08 .project-tag,.variant-09 .project-tag{color:#111}
+.variant-07 .portfolio-section,.variant-08 .portfolio-section,.variant-09 .portfolio-section{--project-accent:#111;--project-line:#111;--project-muted:#555;--project-surface:#fff}
+.variant-07 .v-footer,.variant-08 .v-footer,.variant-09 .v-footer{color:#555}
+.portfolio-heading h2{display:flex;align-items:center;gap:11px}
+.collab-section{display:grid;grid-template-columns:minmax(300px,.95fr) minmax(0,1.05fr);align-items:center;gap:36px;padding:32px 0 28px;margin-top:20px;border-top:1px solid #111;border-bottom:1px solid #111;color:#111}
+.collab-lockup{display:flex;align-items:center;justify-content:center;gap:15px;min-width:0}
+.collab-buyget{display:block;width:clamp(74px,9vw,112px);height:auto;aspect-ratio:1;object-fit:contain;background:#fff}
+.collab-join{display:inline-grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid #111;border-radius:50%;font:22px/1 Georgia,'Times New Roman',serif}
+.collab-basturma{display:block;width:min(250px,45%);height:68px;object-fit:contain;mix-blend-mode:multiply}
+.collab-copy{min-width:0}
+.collab-titleline{display:flex;align-items:center;gap:10px}
+.collab-kicker{display:block;font-size:10px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+.collab-copy h2{margin:9px 0 8px;font-size:clamp(25px,3vw,37px);line-height:1.05;letter-spacing:-.045em}
+.collab-copy p{margin:0;color:#444;font-size:14px;line-height:1.6}
+.collab-contact{display:inline-block;margin-top:13px;color:#111;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.collab-contacts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:13px}
+.collab-contacts .collab-contact{margin-top:0}
+.variant-08 .collab-section{grid-template-columns:1fr;gap:20px;text-align:center;padding:38px 0}
+.variant-08 .collab-copy h2{font:normal clamp(29px,4vw,44px)/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.04em}
+.variant-08 .collab-basturma{height:75px}
+.variant-09 .collab-section{grid-template-columns:1fr;gap:18px;padding:28px 20px;background:#f5f5f5}
+.variant-09 .collab-lockup{justify-content:flex-start}
+.variant-09 .collab-copy h2{font-size:29px;text-transform:uppercase;letter-spacing:-.055em}
+.variant-09 .collab-join{border-radius:0;transform:rotate(45deg)}
+.variant-09 .collab-join span{transform:rotate(-45deg)}
+/* A distinctive monochrome sweep for the scale cards and skill chips. */
+.variant-07 .v-panel,.variant-08 .v-panel,.variant-09 .v-panel{position:relative;isolation:isolate;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.variant-07 .v-panel::before,.variant-08 .v-panel::before,.variant-09 .v-panel::before{content:"";position:absolute;z-index:0;inset:0;background:linear-gradient(112deg,#111 0 46%,#3b3b3b 46% 50%,#111 50% 100%);transform:translateY(102%);transition:transform .32s cubic-bezier(.2,.75,.25,1)}
+.variant-07 .v-panel>*,.variant-08 .v-panel>*,.variant-09 .v-panel>*{position:relative;z-index:1}
+.variant-07 .v-panel:hover,.variant-08 .v-panel:hover,.variant-09 .v-panel:hover,.variant-07 .v-panel:focus-within,.variant-08 .v-panel:focus-within,.variant-09 .v-panel:focus-within{transform:translate(-3px,-3px);border-color:#111;box-shadow:6px 6px 0 #111}
+.variant-07 .v-panel:hover::before,.variant-08 .v-panel:hover::before,.variant-09 .v-panel:hover::before,.variant-07 .v-panel:focus-within::before,.variant-08 .v-panel:focus-within::before,.variant-09 .v-panel:focus-within::before{transform:translateY(0)}
+.variant-07 .v-panel:hover h3,.variant-07 .v-panel:hover p,.variant-08 .v-panel:hover h3,.variant-08 .v-panel:hover p,.variant-09 .v-panel:hover h3,.variant-09 .v-panel:hover p,.variant-07 .v-panel:focus-within h3,.variant-07 .v-panel:focus-within p,.variant-08 .v-panel:focus-within h3,.variant-08 .v-panel:focus-within p,.variant-09 .v-panel:focus-within h3,.variant-09 .v-panel:focus-within p{color:#fff}
+.variant-07 .v-panel:hover a,.variant-08 .v-panel:hover a,.variant-09 .v-panel:hover a,.variant-07 .v-panel:focus-within a,.variant-08 .v-panel:focus-within a,.variant-09 .v-panel:focus-within a{color:#fff}
+.variant-07 .v-skills span,.variant-08 .v-skills span,.variant-09 .v-skills span{position:relative;overflow:hidden;transition:color .2s ease,background-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.variant-07 .v-skills span:hover,.variant-08 .v-skills span:hover,.variant-09 .v-skills span:hover{background:#111;color:#fff;transform:translateY(-2px);box-shadow:3px 3px 0 #111}
+.variant-07 .v-skills span:focus-visible,.variant-08 .v-skills span:focus-visible,.variant-09 .v-skills span:focus-visible{outline:2px solid #111;outline-offset:2px;background:#111;color:#fff}
+.variant-07 .v-panel .icon-wrap,.variant-08 .v-panel .icon-wrap,.variant-09 .v-panel .icon-wrap{position:relative;z-index:1}
+.variant-08 .v-panel::before{transform:translateX(-102%);background:linear-gradient(105deg,#111 0 47%,#3b3b3b 47% 51%,#111 51%)}
+.variant-08 .v-panel:hover::before,.variant-08 .v-panel:focus-within::before{transform:translateX(0)}
+.variant-09 .v-panel::before{transform:scaleX(0);transform-origin:left}
+.variant-09 .v-panel:hover::before,.variant-09 .v-panel:focus-within::before{transform:scaleX(1)}
+@media(max-width:800px){.variant-07 .about-strip,.variant-08 .about-strip,.variant-09 .about-strip{grid-template-columns:1fr;gap:14px}.variant-07 .about-strip .section-heading,.variant-08 .about-strip .section-heading,.variant-09 .about-strip .section-heading{grid-row:auto}.variant-07 .about-facts,.variant-08 .about-facts,.variant-09 .about-facts{grid-column:1}.variant-09 .v-top{margin:0 -17px;padding:16px 17px}.variant-09 .v-metrics{margin:0 -17px;padding:0 17px}}
+@media(max-width:600px){.variant-07 .v-sheet,.variant-08 .v-sheet,.variant-09 .v-sheet{padding:18px 17px 32px}.variant-07 .v-top nav,.variant-08 .v-top nav,.variant-09 .v-top nav{gap:10px;flex-wrap:wrap;justify-content:flex-end}.variant-07 .v-top,.variant-08 .v-top,.variant-09 .v-top{font-size:9px}.variant-07 .v-hero,.variant-08 .v-hero,.variant-09 .v-hero{grid-template-columns:1fr;gap:15px;padding:32px 0 22px}.variant-07 .resume-avatar,.variant-08 .resume-avatar,.variant-09 .resume-avatar{grid-row:1;width:138px;height:138px;margin:0 auto}.variant-07 .v-metrics,.variant-08 .v-metrics,.variant-09 .v-metrics{grid-template-columns:1fr 1fr}.variant-07 .v-metrics div,.variant-08 .v-metrics div,.variant-09 .v-metrics div{padding:12px 8px;border-bottom:1px solid #aaa}.variant-07 .v-metrics div:nth-child(2),.variant-08 .v-metrics div:nth-child(2),.variant-09 .v-metrics div:nth-child(2){border-right:0}.variant-07 .about-facts,.variant-08 .about-facts,.variant-09 .about-facts{grid-template-columns:1fr;gap:9px}.variant-07 .review-slider,.variant-08 .review-slider,.variant-09 .review-slider{padding:18px 16px;min-height:0}.variant-07 .review-quote,.variant-08 .review-quote,.variant-09 .review-quote{font-size:23px}.variant-07 .review-summary,.variant-08 .review-summary,.variant-09 .review-summary{font-size:17px}.variant-07 .review-heading,.variant-08 .review-heading,.variant-09 .review-heading{align-items:flex-start}}
+@media(max-width:600px){.collab-section{grid-template-columns:1fr;gap:20px}.collab-lockup{justify-content:flex-start;gap:12px}.collab-basturma{width:min(220px,52%);height:58px}.variant-08 .collab-section{text-align:left}}
+@media print{.variant-07 .v-sheet,.variant-08 .v-sheet,.variant-09 .v-sheet{max-width:none;padding:0}.variant-07 .review-section,.variant-08 .review-section,.variant-09 .review-section{break-inside:avoid}.review-controls{display:none}}

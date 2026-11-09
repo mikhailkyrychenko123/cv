@@ -1,0 +1,25 @@
+/* Variant 28: the complete image-and-copy composition advances as one slide. */
+.co-section-slider{position:relative;min-width:0}
+.co-full-slide{min-width:0}
+.co-full-slide[hidden]{display:none!important}
+.co-full-slide:not([hidden]){animation:co-full-slide-in .34s cubic-bezier(.2,.72,.25,1) both}
+@keyframes co-full-slide-in{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.co-section-arrow{position:absolute;z-index:6;top:50%;display:grid;place-items:center;width:42px;height:42px;padding:0;border:1px solid #cbd5d8;border-radius:50%;background:rgba(255,255,255,.97);color:#173f5c;box-shadow:0 4px 14px rgba(20,40,50,.1);transform:translateY(-50%);transition:background .18s,border-color .18s,color .18s,box-shadow .18s,transform .18s}
+.co-section-arrow--prev{left:-18px}
+.co-section-arrow--next{right:-18px}
+.co-section-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+.co-section-arrow:hover{border-color:#173f37;background:#173f37;color:#fff;box-shadow:0 6px 16px rgba(23,63,55,.18);transform:translateY(-50%) scale(1.04)}
+.co-section-arrow:focus-visible{outline:3px solid rgba(23,63,55,.24);outline-offset:3px}
+.co-section-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid #e3e7e8}
+.co-section-controls>button{display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid #d8dfe2;border-radius:50%;background:#fff;color:#173f5c;font:24px/1 Arial,sans-serif;transition:border-color .18s,background .18s,transform .18s}
+.co-section-controls>button:hover{transform:translateY(-1px);border-color:#173f5c;background:#f7f9f9}
+.co-section-dots{display:flex;align-items:center;gap:6px}
+.co-section-dots button{width:31px;height:29px;padding:0;border:1px solid #d7dfe2;border-radius:2px;background:#fff;color:#173f5c;font-size:9px;font-weight:800;transition:background .18s,color .18s,border-color .18s}
+.co-section-dots button[aria-current=true]{border-color:#173f37;background:#173f37;color:#fff}
+.co-section-counter{margin-left:5px;color:#53636a;font-size:8px;font-weight:800;letter-spacing:.12em}
+.co-vector-strict .co-add-button{min-width:186px;padding:10px 13px;gap:8px}
+.co-vector-strict .co-button-label{font-size:9px;line-height:1.25;letter-spacing:.045em;text-align:center;text-transform:none}
+.co-vector-strict .co-add-button .co-bag-icon{flex:0 0 17px}
+.co-vector-strict .co-add-button .co-button-spark{top:5px}
+@media(max-width:720px){.co-section-arrow--prev{left:5px}.co-section-arrow--next{right:5px}.co-section-controls{margin-top:15px;padding-top:11px}.co-vector-strict .co-add-button{min-width:176px;padding:9px 10px}.co-vector-strict .co-button-label{font-size:8px}}
+@media(max-width:380px){.co-section-arrow{width:36px;height:36px}.co-section-arrow svg{width:16px;height:16px}.co-section-counter{font-size:7px;letter-spacing:.08em}.co-section-controls{gap:6px}.co-section-dots{gap:4px}.co-section-dots button{width:27px;height:27px}.co-vector-strict .co-add-button{min-width:162px;right:7px;bottom:8px}}
