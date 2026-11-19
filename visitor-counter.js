@@ -60,7 +60,7 @@
 
   async function post(type) {
     try {
-      return await fetch(endpoint, {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ type, visitorId }),
@@ -68,7 +68,13 @@
         cache: "no-store",
         keepalive: true,
       });
+      if (!response.ok) {
+        const detail = await response.clone().json().catch(() => null);
+        console.warn("Site traffic counter event failed:", response.status, detail?.error || "Request failed");
+      }
+      return response;
     } catch {
+      console.warn("Site traffic counter event could not reach the server.");
       return null;
     }
   }
@@ -77,7 +83,9 @@
     try {
       const response = await fetch(endpoint, { credentials: "same-origin", cache: "no-store" });
       if (response.ok) paint(await response.json());
+      else console.warn("Site traffic counter could not load stats:", response.status);
     } catch {
+      console.warn("Site traffic counter could not reach the server.");
       // Keep the compact counter at its neutral zero state if the network is unavailable.
     }
   }
@@ -94,7 +102,8 @@
       localStorage.setItem(visitorKey, visitorId);
     }
   } catch {
-    return;
+    // Still count this page view and show this tab as online when persistent storage is blocked.
+    visitorId = crypto.randomUUID();
   }
 
   post("view").finally(refresh);
