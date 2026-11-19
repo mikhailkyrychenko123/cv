@@ -67,31 +67,31 @@
 @media(prefers-reduced-motion:reduce){.variant-13-pixel .footer-line-art path{animation:none;stroke-dasharray:none;stroke-dashoffset:0}}
 
 /* Compact pixel-era visitor counter, placed at the lower-left edge of the footer. */
-.variant-13-pixel .visitor-counter{box-sizing:border-box;width:min(100%,340px);margin:6px 0 10px;padding:6px 7px 5px;border:1px solid #111;background:#fff;color:#111;box-shadow:2px 2px 0 rgba(17,17,17,.12);font-family:Arial,Helvetica,sans-serif}
-.variant-13-pixel .visitor-counter__top{display:flex;align-items:center;gap:6px;min-height:17px;padding-bottom:4px;border-bottom:1px solid #111}
-.variant-13-pixel .visitor-counter__globe{width:14px;height:14px;flex:none;fill:currentColor;shape-rendering:crispEdges}
-.variant-13-pixel .visitor-counter__brand,.variant-13-pixel .visitor-counter__timezone,.variant-13-pixel .visitor-counter__table th,.variant-13-pixel .visitor-counter__online-label{font-size:7.5px;font-weight:700;letter-spacing:.09em}
+.variant-13-pixel .visitor-counter{box-sizing:border-box;width:min(100%,300px);margin:4px 0 8px;padding:4px 5px 3px;border:1px solid #111;background:#fff;color:#111;box-shadow:2px 2px 0 rgba(17,17,17,.12);font-family:Arial,Helvetica,sans-serif}
+.variant-13-pixel .visitor-counter__top{display:flex;align-items:center;gap:4px;min-height:14px;padding-bottom:3px;border-bottom:1px solid #111}
+.variant-13-pixel .visitor-counter__globe{width:12px;height:12px;flex:none;fill:currentColor;shape-rendering:crispEdges}
+.variant-13-pixel .visitor-counter__brand,.variant-13-pixel .visitor-counter__timezone,.variant-13-pixel .visitor-counter__table th,.variant-13-pixel .visitor-counter__online-label{font-size:7px;font-weight:700;letter-spacing:.06em}
 .variant-13-pixel .visitor-counter__timezone{margin-left:auto;color:#555}
 .variant-13-pixel .visitor-counter__table{width:100%;border-collapse:collapse;table-layout:fixed}
-.variant-13-pixel .visitor-counter__table thead th{height:19px;text-align:center;vertical-align:middle}
+.variant-13-pixel .visitor-counter__table thead th{height:16px;text-align:center;vertical-align:middle}
 .variant-13-pixel .visitor-counter__table thead th:first-child{width:42%;text-align:left}
 .variant-13-pixel .visitor-counter__table tbody tr{border-top:1px solid #b7b7b7}
-.variant-13-pixel .visitor-counter__table tbody th{padding:3px 3px 3px 0;text-align:left;white-space:nowrap}
-.variant-13-pixel .visitor-counter__table td{padding:2px 0;text-align:center;vertical-align:middle}
-.variant-13-pixel .visitor-counter__value{font-family:"Courier New",monospace;font-size:17px;font-weight:700;line-height:1}
-.variant-13-pixel .visitor-counter__value svg{display:block;width:auto;height:17px;max-width:100%;margin:auto;fill:currentColor;shape-rendering:crispEdges}
-.variant-13-pixel .visitor-counter__online{display:flex;align-items:center;gap:8px;min-height:24px;margin-top:4px;padding-top:4px;border-top:1px solid #111}
-.variant-13-pixel .visitor-counter__online-label{display:flex;align-items:center;gap:5px}
-.variant-13-pixel .visitor-counter__online-label i{display:block;width:5px;height:5px;background:#111;animation:visitor-counter-blink 1.1s steps(2,end) infinite}
+.variant-13-pixel .visitor-counter__table tbody th{padding:2px 2px 2px 0;text-align:left;white-space:nowrap}
+.variant-13-pixel .visitor-counter__table td{padding:1px 0;text-align:center;vertical-align:middle}
+.variant-13-pixel .visitor-counter__value{font-family:"Courier New",monospace;font-size:15px;font-weight:700;line-height:1}
+.variant-13-pixel .visitor-counter__value svg{display:block;width:auto;height:14px;max-width:100%;margin:auto;fill:currentColor;shape-rendering:crispEdges}
+.variant-13-pixel .visitor-counter__online{display:flex;align-items:center;gap:6px;min-height:19px;margin-top:3px;padding-top:3px;border-top:1px solid #111}
+.variant-13-pixel .visitor-counter__online-label{display:flex;align-items:center;gap:4px}
+.variant-13-pixel .visitor-counter__online-label i{display:block;width:4px;height:4px;background:#111;animation:visitor-counter-blink 1.1s steps(2,end) infinite}
 .variant-13-pixel .visitor-counter__value--online{margin-left:auto}
 .variant-13-pixel .visitor-counter__sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @keyframes visitor-counter-blink{50%{opacity:0}}
 @media(max-width:600px){
-  .variant-13-pixel .visitor-counter{width:min(100%,340px);margin:6px 0 10px;padding:5px 6px 4px}
+  .variant-13-pixel .visitor-counter{width:min(100%,300px);margin:4px 0 8px;padding:3px 4px 2px}
   .variant-13-pixel .visitor-counter__table thead th:first-child{width:38%}
   .variant-13-pixel .visitor-counter__table tbody th{font-size:7px;letter-spacing:.06em}
   .variant-13-pixel .visitor-counter__table thead th{font-size:7px;letter-spacing:.07em}
-  .variant-13-pixel .visitor-counter__value svg{height:15px}
-  .variant-13-pixel .visitor-counter__online{min-height:21px}
+  .variant-13-pixel .visitor-counter__value svg{height:13px}
+  .variant-13-pixel .visitor-counter__online{min-height:17px}
 }
 @media(prefers-reduced-motion:reduce){.variant-13-pixel .visitor-counter__online-label i{animation:none}}
