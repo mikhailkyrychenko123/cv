@@ -92,7 +92,8 @@
 @media(prefers-reduced-motion:reduce){.variant-13-pixel .visitor-counter__online-label i{animation:none}}
 
 /* Keep the navigation row available while the seasonal banner and page content scroll. */
-.v4-page.variant-13-pixel .v-top{position:sticky;top:16px;z-index:1000;background:#fff;transition:box-shadow .18s ease}
+.v4-page.variant-13-pixel .v-top{position:sticky;top:16px;z-index:1000;isolation:isolate;background:#fff;border-bottom:0;transition:box-shadow .18s ease}
+.v4-page.variant-13-pixel .v-top::after{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);box-sizing:border-box;background:#fff;border-bottom:1px solid var(--line,#171717);pointer-events:none}
 .v4-page.variant-13-pixel .v-top.is-stuck{box-shadow:0 5px 9px -8px rgba(17,17,17,.72)}
 @media(min-width:761px){
   .v4-page.variant-13-pixel .v-top.is-stuck::before{content:"";position:fixed;top:0;right:0;left:0;z-index:1;height:16px;background:#fff;pointer-events:none}
