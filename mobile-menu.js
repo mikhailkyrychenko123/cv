@@ -6,7 +6,8 @@
     let framePending = false;
     const updateStickyState = () => {
       framePending = false;
-      stickyHeader.classList.toggle('is-stuck', stickyHeader.getBoundingClientRect().top <= 1);
+      const stickyTop = Number.parseFloat(window.getComputedStyle(stickyHeader).top) || 0;
+      stickyHeader.classList.toggle('is-stuck', stickyHeader.getBoundingClientRect().top <= stickyTop + 1);
     };
     const queueStickyState = () => {
       if (framePending) return;
