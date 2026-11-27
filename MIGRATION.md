@@ -55,6 +55,12 @@ These are account-side resources and are not recreated by cloning Git:
 - The encrypted Pages secret `GAME_ADMIN_PASSWORD` for `/adm/`.
 - Any reservation and product inquiry records stored in D1.
 
+## Analytics and search setup
+
+- Google Analytics 4 property **Basturma** has a website stream for `https://basturma.kiev.ua` with measurement ID `G-WE1P9L6KG6`. The shared `google-analytics.js` loader is included on the site's standalone HTML pages and skips embedded iframe views, plus browsers sending Do Not Track or Global Privacy Control signals.
+- Google Search Console has the domain property `basturma.kiev.ua`, verified with a DNS TXT record. `https://basturma.kiev.ua/sitemap.xml` is submitted and currently reports success with six discovered URLs.
+- The measurement ID is public site configuration, not a secret. Do not add Google account credentials or API secrets to the repository.
+
 Use `functions/SETUP.md` and the SQL files in `functions/migrations/` to configure the Pages Functions. The actual Pages project name and Cloudflare account details are not stored in this repository; retrieve them from the Cloudflare dashboard. The admin password and D1 contents are intentionally not stored in Git. Before changing or losing Cloudflare account access, arrange secure access to the database and back up any records that must be retained; never commit a database export containing personal information.
 
 ## Codex and account migration limits
