@@ -1,5 +1,5 @@
 (() => {
-  const measurementId = "G-WE1P9L6KG6";
+  const measurementId = "G-50CWF8HW6V";
 
   // These game pages are embedded in iframes on the portfolio homepage.
   // Track only top-level visits so embedded demos do not inflate page views.
